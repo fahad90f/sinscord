@@ -169,3 +169,4 @@ bundled third-party components, which keep their own terms:
 The AGPL's remote-network clause (section 13) applies to Microcord itself: anyone
 running a modified public network service built from this code must offer the
 Corresponding Source of their version to its users.
+# sinscord
