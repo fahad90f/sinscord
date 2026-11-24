@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#CC1A1A</item>
+        <item name="colorPrimaryVariant">#A01515</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#CC1A1A</item>
+        <item name="colorSecondaryVariant">#A01515</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorSurface">#2B2E31</item>
+        <item name="colorOnSurface">#FFFFFF</item>
+        <item name="android:colorBackground">#1E2124</item>
+        <item name="colorOnBackground">#FFFFFF</item>
+        <item name="colorError">#F04747</item>
+        <item name="colorOnError">#FFFFFF</item>
+        <item name="android:windowBackground">@color/loading_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">#1E2124</item>
+        <item name="android:navigationBarColor">#1E2124</item>
+        <item name="colorBackgroundPrimary">#36393F</item>
+        <item name="colorBackgroundSecondary">#2F3136</item>
+        <item name="colorBackgroundTertiary">#202225</item>
+        <item name="colorBackgroundFloating">#36393F</item>
+        <item name="colorBackgroundNestedFloating">#2F3136</item>
+        <item name="colorInteractiveNormal">#B9BBBE</item>
+        <item name="colorInteractiveMuted">#72767D</item>
+        <item name="colorInteractiveActive">#FFFFFF</item>
+        <item name="colorTextNormal">#DCDDDE</item>
+        <item name="colorTextMuted">#72767D</item>
+        <item name="colorTextLink">#00AFF4</item>
+        <item name="colorHeaderPrimary">#FFFFFF</item>
+        <item name="colorHeaderSecondary">#B9BBBE</item>
+    </style>
+
+    <style name="AppTheme.Loading" parent="AppTheme.Dark">
+        <item name="android:windowBackground">@color/loading_background</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme.Dark.MediaViewer" parent="AppTheme.Dark">
+        <item name="android:windowBackground">#000000</item>
+        <item name="android:statusBarColor">#000000</item>
+        <item name="android:navigationBarColor">#000000</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="AppTheme.Dark.EmbeddedActivity" parent="AppTheme.Dark">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">#1E2124</item>
+    </style>
+
+</resources>
