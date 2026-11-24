@@ -24,4 +24,5 @@
     <color name="material_you_background_floating">#36393F</color>
     <color name="material_you_accent">#CC1A1A</color>
     <color name="material_you_text_subtle">#B9BBBE</color>
+    <color name="primary_dark_600">#1a1c1f</color>
 </resources>
