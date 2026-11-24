@@ -18,6 +18,15 @@
     <!-- Status colors -->
     <color name="status_red_400">#ED4245</color>
     <color name="status_red_500">#C03537</color>
+    <color name="status_red">#ED4245</color>
+    <color name="status_yellow_500">#FAA61A</color>
+    <color name="status_green_600">#3BA55C</color>
+
+    <!-- Alpha overlays -->
+    <color name="black_alpha_60">#99000000</color>
+
+    <!-- Primary scale -->
+    <color name="primary_200">#E3E5E8</color>
 
     <!-- Material You dynamic theming stubs (static fallbacks) -->
     <color name="material_you_modifier">#1A000000</color>
