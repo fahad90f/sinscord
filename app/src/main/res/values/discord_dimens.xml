@@ -3,4 +3,17 @@
     <dimen name="tab_host_corner_radius">8dp</dimen>
     <dimen name="folder_border_radius">16dp</dimen>
     <dimen name="folder_border_radius_decorator">4dp</dimen>
+    <dimen name="app_elevation">2dp</dimen>
+    <dimen name="chat_cell_horizontal_spacing_total">72dp</dimen>
+    <dimen name="chat_cell_vertical_spacing_padding">4dp</dimen>
+    <dimen name="chat_input_emoji_size">24dp</dimen>
+    <dimen name="guild_item_spacing">8dp</dimen>
+    <dimen name="list_bottom_padding">80dp</dimen>
+    <dimen name="padding_bottom_fab_screen">88dp</dimen>
+    <dimen name="uikit_guideline_chat">72dp</dimen>
+    <dimen name="uikit_textsize_large">16sp</dimen>
+    <dimen name="uikit_textsize_medium">14sp</dimen>
+    <dimen name="uikit_textsize_small">12sp</dimen>
+    <dimen name="uikit_textsize_xlarge">20sp</dimen>
+    <dimen name="uikit_textsize_xxlarge">24sp</dimen>
 </resources>

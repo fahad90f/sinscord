@@ -46,6 +46,41 @@
         <item name="colorTextBrand">#CC1A1A</item>
         <item name="flexInputIconColor">#B9BBBE</item>
         <item name="theme_chat_spoiler_bg">#202225</item>
+        <item name="colorButtonDangerBackground">#F04747</item>
+        <item name="colorButtonPositiveBackground">#43B581</item>
+        <item name="colorCompoundButton">#CC1A1A</item>
+        <item name="colorPrimaryCircle">#36393F</item>
+        <item name="colorTextDanger">#F04747</item>
+        <item name="component_v2_container_bg">#2F3136</item>
+        <item name="primary_100">#F2F3F5</item>
+        <item name="primary_100_alpha_60">#99F2F3F5</item>
+        <item name="primary_300">#8E9297</item>
+        <item name="primary_600">#4F545C</item>
+        <item name="primary_630">#2F3136</item>
+        <item name="primary_700">#202225</item>
+        <item name="tabSelectedTextColor">#FFFFFF</item>
+        <item name="tabTextColor">#72767D</item>
+        <item name="toolbarColor">#36393F</item>
+        <item name="bg_pressed_highlight">#1AFFFFFF</item>
+        <item name="font_display_bold">@null</item>
+        <item name="font_monospace">@null</item>
+        <item name="font_primary_normal">@null</item>
+        <item name="font_primary_semibold">@null</item>
+        <item name="ic_action_bar_back">@drawable/ic_arrow_right</item>
+        <item name="ic_copy">@drawable/ic_copy_24dp</item>
+        <item name="ic_empty_integrations">@drawable/img_clyde_empty</item>
+        <item name="ic_file_download_opaque">@drawable/ic_file_download_grey_24dp</item>
+        <item name="ic_game_icon_placeholder">@drawable/ic_controller_24dp</item>
+        <item name="ic_krisp_logo">@drawable/ic_mic_muted_grey_24dp</item>
+        <item name="ic_navigate_next">@drawable/ic_chevron_right_grey_12dp</item>
+        <item name="ic_user_actions_block">@drawable/ic_remove_friend_red_24dp</item>
+        <item name="ic_visibility">@drawable/ic_eye</item>
+        <item name="ic_visibility_off">@drawable/ic_eye</item>
+        <item name="manage_reactions_emoji_selection_indicator">@drawable/ic_check_white_24dp</item>
+        <item name="theme_chat_mentioned_me">#3FCC1A1A</item>
+        <item name="theme_emoji_settings_empty">@drawable/img_clyde_empty</item>
+        <item name="theme_friends_no_friends">@drawable/img_clyde_empty</item>
+        <item name="theme_friends_no_request">@drawable/img_clyde_empty</item>
     </style>
 
     <style name="AppTheme.Loading" parent="AppTheme.Dark">

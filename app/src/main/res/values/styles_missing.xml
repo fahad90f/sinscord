@@ -110,4 +110,42 @@
     <style name="Widget.MaterialComponents.CardView" parent="Widget.MaterialComponents.CardView" />
     <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
     <style name="cpv_ColorPickerViewStyle" parent="" />
+    <style name="UiKit.GuildsListIcon" parent="" />
+    <style name="UiKit.GuildsListItem" parent="" />
+    <style name="UiKit.ImageView" parent="" />
+    <style name="UiKit.ListItem" parent="" />
+    <style name="UiKit.Material.Button" parent="" />
+    <style name="UiKit.Material.Button.Fit" parent="" />
+    <style name="UiKit.Material.Button.Green.Fit" parent="" />
+    <style name="UiKit.Material.Button.Outline" parent="" />
+    <style name="UiKit.Material.Button.Red" parent="" />
+    <style name="UiKit.Material.Button.Red.Fit" parent="" />
+    <style name="UiKit.Material.Button.Secondary" parent="" />
+    <style name="UiKit.Material.Button.Secondary.Fit" parent="" />
+    <style name="UiKit.Material.Button.Tertiary" parent="" />
+    <style name="UiKit.Material.Button.Transparent.Fit" parent="" />
+    <style name="UiKit.ProgressBar.White" parent="" />
+    <style name="UiKit.SearchInput" parent="" />
+    <style name="UiKit.SearchInputClear" parent="" />
+    <style name="UiKit.SeekBar" parent="" />
+    <style name="UiKit.Settings.Divider" parent="" />
+    <style name="UiKit.Settings.Item" parent="" />
+    <style name="UiKit.Settings.Item.Addition" parent="" />
+    <style name="UiKit.Settings.Item.Chevron" parent="" />
+    <style name="UiKit.Settings.Item.Header" parent="" />
+    <style name="UiKit.Settings.Item.Icon" parent="" />
+    <style name="UiKit.Settings.Item.Label" parent="" />
+    <style name="UiKit.Settings.Item.SubText" parent="" />
+    <style name="UiKit.Settings.Item.SubText.Attached" parent="" />
+    <style name="UiKit.Sheet.Header.Title" parent="" />
+    <style name="UiKit.TextAppearance" parent="" />
+    <style name="UiKit.TextAppearance.Bold" parent="" />
+    <style name="UiKit.TextAppearance.Semibold" parent="" />
+    <style name="UiKit.TextInputLayout.EditText" parent="" />
+    <style name="UiKit.TextInputLayout.EditText.MultiLine" parent="" />
+    <style name="UiKit.TextInputLayout.EditText.SingleLine" parent="" />
+    <style name="UiKit.TextInputLayout.EditText.SingleLine.Password" parent="" />
+    <style name="UiKit.TextInputLayout.EditText.SingleLine.Search" parent="" />
+    <style name="UiKit.TextInputLayout.Primary" parent="" />
+    <style name="UiKit.TextInputLayout.Primary.Password" parent="" />
 </resources>

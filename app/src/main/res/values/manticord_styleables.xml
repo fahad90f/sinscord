@@ -29,6 +29,41 @@
     <attr name="color_brand" format="color" />
     <attr name="flexInputIconColor" format="color" />
     <attr name="theme_chat_spoiler_bg" format="color" />
+    <attr name="colorButtonDangerBackground" format="color" />
+    <attr name="colorButtonPositiveBackground" format="color" />
+    <attr name="colorCompoundButton" format="color" />
+    <attr name="colorPrimaryCircle" format="color" />
+    <attr name="colorTextDanger" format="color" />
+    <attr name="component_v2_container_bg" format="color" />
+    <attr name="primary_100" format="color" />
+    <attr name="primary_100_alpha_60" format="color" />
+    <attr name="primary_300" format="color" />
+    <attr name="primary_600" format="color" />
+    <attr name="primary_630" format="color" />
+    <attr name="primary_700" format="color" />
+    <attr name="tabSelectedTextColor" format="color" />
+    <attr name="tabTextColor" format="color" />
+    <attr name="toolbarColor" format="color" />
+    <attr name="bg_pressed_highlight" format="color" />
+    <attr name="font_display_bold" format="reference" />
+    <attr name="font_monospace" format="reference" />
+    <attr name="font_primary_normal" format="reference" />
+    <attr name="font_primary_semibold" format="reference" />
+    <attr name="ic_action_bar_back" format="reference" />
+    <attr name="ic_copy" format="reference" />
+    <attr name="ic_empty_integrations" format="reference" />
+    <attr name="ic_file_download_opaque" format="reference" />
+    <attr name="ic_game_icon_placeholder" format="reference" />
+    <attr name="ic_krisp_logo" format="reference" />
+    <attr name="ic_navigate_next" format="reference" />
+    <attr name="ic_user_actions_block" format="reference" />
+    <attr name="ic_visibility" format="reference" />
+    <attr name="ic_visibility_off" format="reference" />
+    <attr name="manage_reactions_emoji_selection_indicator" format="reference" />
+    <attr name="theme_chat_mentioned_me" format="color|reference" />
+    <attr name="theme_emoji_settings_empty" format="reference" />
+    <attr name="theme_friends_no_friends" format="reference" />
+    <attr name="theme_friends_no_request" format="reference" />
     <declare-styleable name="AvatarDecorationView">
         <attr name="avd_target" format="reference"/>
     </declare-styleable>
