@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Discord custom theme color attributes -->
+    <attr name="colorBackgroundPrimary" format="color" />
+    <attr name="colorBackgroundSecondary" format="color" />
+    <attr name="colorBackgroundTertiary" format="color" />
+    <attr name="colorBackgroundFloating" format="color" />
+    <attr name="colorBackgroundNestedFloating" format="color" />
+    <attr name="colorInteractiveNormal" format="color" />
+    <attr name="colorInteractiveMuted" format="color" />
+    <attr name="colorInteractiveActive" format="color" />
+    <attr name="colorTextNormal" format="color" />
+    <attr name="colorTextMuted" format="color" />
+    <attr name="colorTextLink" format="color" />
+    <attr name="colorHeaderPrimary" format="color" />
+    <attr name="colorHeaderSecondary" format="color" />
     <declare-styleable name="AvatarDecorationView">
         <attr name="avd_target" format="reference"/>
     </declare-styleable>
