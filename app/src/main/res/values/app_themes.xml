@@ -31,6 +31,21 @@
         <item name="colorTextLink">#00AFF4</item>
         <item name="colorHeaderPrimary">#FFFFFF</item>
         <item name="colorHeaderSecondary">#B9BBBE</item>
+        <item name="colorBackgroundSecondaryAlt">#292B2F</item>
+        <item name="colorBackgroundAccent">#4F545C</item>
+        <item name="colorBackgroundModifierAccent">#1AFFFFFF</item>
+        <item name="colorBackgroundModifierSelected">#1AFFFFFF</item>
+        <item name="colorInputBackground">#202225</item>
+        <item name="colorPrimaryDivider">#1AFFFFFF</item>
+        <item name="colorButtonSecondaryBackground">#4F545C</item>
+        <item name="colorControlBrandForeground">#CC1A1A</item>
+        <item name="colorGuildBarIconBackground">#36393F</item>
+        <item name="colorGuildFolderBackground">#5865F2</item>
+        <item name="appFrameBorderColor">#1AFFFFFF</item>
+        <item name="color_brand">#CC1A1A</item>
+        <item name="colorTextBrand">#CC1A1A</item>
+        <item name="flexInputIconColor">#B9BBBE</item>
+        <item name="theme_chat_spoiler_bg">#202225</item>
     </style>
 
     <style name="AppTheme.Loading" parent="AppTheme.Dark">

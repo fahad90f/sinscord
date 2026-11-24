@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="white_alpha_40">#66FFFFFF</color>
+
+    <!-- Discord primary scale (dark backgrounds) -->
+    <color name="primary_100">#F2F3F5</color>
+    <color name="primary_200_alpha_30">#4DE3E5E8</color>
+    <color name="primary_630">#2F3136</color>
+    <color name="primary_700_alpha_60">#99202225</color>
+
+    <!-- Grey scale -->
+    <color name="grey_2">#FAFAFA</color>
+
+    <!-- Status colors -->
+    <color name="status_red_400">#ED4245</color>
+    <color name="status_red_500">#C03537</color>
+
+    <!-- Material You dynamic theming stubs (static fallbacks) -->
+    <color name="material_you_modifier">#1A000000</color>
+    <color name="material_you_background_floating">#36393F</color>
+    <color name="material_you_accent">#CC1A1A</color>
+    <color name="material_you_text_subtle">#B9BBBE</color>
+</resources>
