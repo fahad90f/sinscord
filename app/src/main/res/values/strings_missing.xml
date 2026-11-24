@@ -466,4 +466,5 @@
     <string name="webhook_modal_icon_description">Webhook Modal Icon Description</string>
     <string name="webhooks">Webhooks</string>
     <string name="wumpus">Wumpus</string>
+    <string name="guild_settings_action_filter_sticker_delete">Delete Sticker</string>
 </resources>
