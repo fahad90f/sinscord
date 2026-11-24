@@ -148,4 +148,34 @@
     <style name="UiKit.TextInputLayout.EditText.SingleLine.Search" parent="" />
     <style name="UiKit.TextInputLayout.Primary" parent="" />
     <style name="UiKit.TextInputLayout.Primary.Password" parent="" />
+    <style name="Animation.MaterialComponents.BottomSheetDialog" parent="Animation.AppCompat" />
+    <style name="AppTheme.Dark.Darker" parent="AppTheme.Dark" />
+    <style name="AppTheme.Dark.Evil" parent="AppTheme.Dark" />
+    <style name="AppTheme.GlobalSearchDialog" parent="AppTheme.Dark" />
+    <style name="AppTheme.Light" parent="Theme.MaterialComponents.Light.NoActionBar" />
+    <style name="AppTheme.MaterialYou" parent="AppTheme.Dark" />
+    <style name="AppTheme.PopupMenu" parent="Widget.AppCompat.PopupMenu" />
+    <style name="Code.TextAppearance.Addition" />
+    <style name="Code.TextAppearance.Comment" />
+    <style name="Code.TextAppearance.Deletion" />
+    <style name="Code.TextAppearance.Generics" />
+    <style name="Code.TextAppearance.Identifier" />
+    <style name="Code.TextAppearance.Keyword" />
+    <style name="Code.TextAppearance.Literal" />
+    <style name="Code.TextAppearance.Params" />
+    <style name="Code.TextAppearance.Types" />
+    <style name="FadeInOut" parent="android:Animation" />
+    <style name="FlexInput.DialogWhenLarge" />
+    <style name="Markdown.ChangelogSpecial.Header1" />
+    <style name="Markdown.Changelog.Header1" />
+    <style name="Markdown.Changelog.Header1.Added" />
+    <style name="Markdown.Changelog.Header1.Fixed" />
+    <style name="Markdown.Changelog.Header1.Improved" />
+    <style name="Markdown.Changelog.Header1.Progress" />
+    <style name="Markdown.Changelog.Header4" />
+    <style name="TextAppearance.Error" />
+    <style name="Theme.Translucent.NoTitleBar.Fullscreen" parent="android:Theme.Translucent.NoTitleBar.Fullscreen" />
+    <style name="UiKit.QuickSwitcher.Animation" />
+    <style name="UiKit.Sheet.KeyboardAvoiding" />
+    <style name="UiKit.Toast" />
 </resources>
