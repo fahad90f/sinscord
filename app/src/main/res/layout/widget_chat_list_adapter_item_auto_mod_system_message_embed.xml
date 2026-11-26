@@ -1,4 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="58.0dip" android:layout_marginEnd="12.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.card.MaterialCardView android:id="@id/automod_card" android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardBackgroundColor="?colorBackgroundSecondary" app:cardCornerRadius="12.0dip" app:cardElevation="0.0dip" app:strokeColor="?colorBackgroundModifierAccent" app:strokeWidth="1.0dip">
+        <LinearLayout android:orientation="vertical" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.discord.views.VitoImageView android:id="@id/chat_list_adapter_item_text_avatar" android:importantForAccessibility="no" style="@style/Avatar.Chat" />
+                <TextView android:textSize="@dimen/uikit_textsize_large" android:textColor="?colorHeaderPrimary" android:ellipsize="end" android:id="@id/username" android:background="?selectableItemBackgroundBorderless" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="100.0dip" android:maxLines="1" android:fontFamily="@font/whitney_medium" android:layout_marginStart="8.0dip" />
+                <View android:id="@id/role_dot" android:visibility="gone" android:layout_width="8.0dip" android:layout_height="8.0dip" android:layout_marginStart="5.0dip" />
+                <ImageView android:id="@id/role_icon" android:visibility="gone" android:layout_width="18.0dip" android:layout_height="18.0dip" android:importantForAccessibility="no" android:layout_marginStart="5.0dip" />
+                <TextView android:textColor="?colorTextMuted" android:ellipsize="end" android:gravity="end" android:id="@id/timestamp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1.0" android:layout_marginStart="8.0dip" style="@style/UiKit.TextView.Subtext" />
+            </LinearLayout>
+            <TextView android:textColor="?colorTextMuted" android:id="@id/member_status_text" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="@string/guild_automod_user_not_member" style="@style/UiKit.TextView.Subtext" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip">
+                <TextView android:textSize="@dimen/uikit_textsize_medium" android:textColor="?colorHeaderPrimary" android:id="@id/header_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:fontFamily="@font/whitney_semibold" />
+            </LinearLayout>
+            <com.discord.utilities.view.text.SimpleDraweeSpanTextView android:textSize="@dimen/uikit_textsize_medium" android:textColor="?colorHeaderPrimary" android:id="@id/message_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:fontFamily="@font/whitney_medium" />
+            <TextView android:textColor="?colorTextMuted" android:id="@id/keyword_text" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" style="@style/UiKit.TextView.Subtext" />
+            <TextView android:textColor="?colorTextMuted" android:id="@id/reason_text" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" style="@style/UiKit.TextView.Subtext" />
+            <LinearLayout android:orientation="vertical" android:id="@id/notification_container" android:background="@drawable/bg_automod_notification" android:padding="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip">
+                <TextView android:textColor="?colorHeaderPrimary" android:id="@id/notification_header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fontFamily="@font/whitney_semibold" style="@style/UiKit.TextView" />
+                <TextView android:textColor="?colorTextNormal" android:id="@id/notification_body" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" style="@style/UiKit.TextView" />
+                <TextView android:textColor="?colorTextMuted" android:id="@id/notification_meta" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" style="@style/UiKit.TextView.Subtext" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip">
+                <TextView android:textColor="?colorTextLink" android:id="@id/channel_chip" android:background="?selectableItemBackgroundBorderless" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" style="@style/UiKit.TextView.Subtext" />
+                <TextView android:textColor="?colorTextMuted" android:id="@id/rule_text" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="6.0dip" style="@style/UiKit.TextView.Subtext" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/blue_shield" android:padding="2.0dip" android:layout_width="16.0dip" android:layout_height="32.0dip" android:src="@drawable/ic_blue_moderator_shield" android:contentDescription="@string/guild_automod_shield_content_description" />
+        <TextView android:textColor="?colorTextLink" android:gravity="center" android:id="@id/actions_button" android:background="?selectableItemBackgroundBorderless" android:layout_width="wrap_content" android:layout_height="40.0dip" android:text="@string/guild_automod_moderator_actions_button" android:paddingStart="6.0dip" android:paddingEnd="6.0dip" style="@style/UiKit.TextView.Subtext" />
+        <TextView android:textColor="?colorTextMuted" android:gravity="center" android:id="@id/dot_separator" android:layout_width="wrap_content" android:layout_height="40.0dip" android:text="@string/guild_automod_separator" android:paddingStart="3.0dip" android:paddingEnd="3.0dip" style="@style/UiKit.TextView.Subtext" />
+        <TextView android:textColor="?colorTextLink" android:gravity="center" android:id="@id/report_button" android:background="?selectableItemBackgroundBorderless" android:layout_width="wrap_content" android:layout_height="40.0dip" android:text="@string/guild_automod_report_issues" android:paddingStart="6.0dip" android:paddingEnd="6.0dip" style="@style/UiKit.TextView.Subtext" />
+        <TextView android:textColor="?colorTextLink" android:gravity="center" android:id="@id/view_message_button" android:background="?selectableItemBackgroundBorderless" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="40.0dip" android:text="@string/guild_automod_view_message" android:paddingStart="6.0dip" android:paddingEnd="6.0dip" style="@style/UiKit.TextView.Subtext" />
+    </LinearLayout>
+</LinearLayout>

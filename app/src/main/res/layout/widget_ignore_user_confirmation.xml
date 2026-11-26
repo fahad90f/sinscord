@@ -11,9 +11,9 @@
         <TextView android:id="@+id/ignore_confirmation_subtitle" android:textSize="@dimen/uikit_textsize_medium" android:textColor="?attr/colorTextNormal" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/ignore_user_confirm_subtitle" style="@style/UiKit.TextView"/>
 
         <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="?attr/colorBackgroundSecondary" android:layout_marginBottom="16dp" android:paddingTop="4dp" android:paddingBottom="4dp">
-            <include layout="@layout/ignore_user_confirmation_row" android:id="@+id/ignore_confirmation_line_1"/>
-            <include layout="@layout/ignore_user_confirmation_row" android:id="@+id/ignore_confirmation_line_2"/>
-            <include layout="@layout/ignore_user_confirmation_row" android:id="@+id/ignore_confirmation_line_3"/>
+            <include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/ignore_user_confirmation_row" android:id="@+id/ignore_confirmation_line_1"/>
+            <include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/ignore_user_confirmation_row" android:id="@+id/ignore_confirmation_line_2"/>
+            <include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/ignore_user_confirmation_row" android:id="@+id/ignore_confirmation_line_3"/>
         </LinearLayout>
 
         <TextView android:textSize="@dimen/uikit_textsize_small" android:textColor="?attr/colorTextMuted" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="@string/ignore_user_confirm_other_option_section_title" style="@style/UiKit.TextView.Semibold"/>

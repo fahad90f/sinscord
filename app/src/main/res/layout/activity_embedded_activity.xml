@@ -213,7 +213,7 @@
             android:tint="@android:color/white" />
     </LinearLayout>
 
-    <include
+    <include android:layout_width="match_parent" android:layout_height="match_parent"
         android:id="@+id/activity_oauth"
         layout="@layout/view_embedded_activity_oauth" />
 </FrameLayout>

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<com.discord.widgets.botuikit.views.ActionRowComponentView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="0.0dip" android:layout_marginBottom="0.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.flexbox.FlexboxLayout android:id="@id/action_row_component_view_group" android:layout_width="fill_parent" android:layout_height="wrap_content" app:dividerDrawable="@drawable/bot_ui_component_divider_drawable" app:flexWrap="wrap" app:showDivider="middle" />
+    <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/action_row_component_view_group_error_row" layout="@layout/view_interaction_failed_label" />
+</com.discord.widgets.botuikit.views.ActionRowComponentView>

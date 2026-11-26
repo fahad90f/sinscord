@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<androidx.core.widget.NestedScrollView android:scrollbars="none" style="@style/UiKit.ViewGroup.NestedScrollView"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center" android:id="@id/friends_add_container" android:background="?colorBackgroundPrimary" android:paddingStart="16.0dip" android:paddingEnd="16.0dip" style="@style/UiKit.ViewGroup.LinearLayout">
+        <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/img_save_your_group" android:importantForAccessibility="no" />
+        <TextView android:textSize="@dimen/uikit_textsize_xxlarge" android:gravity="center" android:layout_gravity="center" android:layout_marginTop="32.0dip" android:text="@string/add_by_id_title" style="@style/UiKit.TextView.H1.Bold" />
+        <TextView android:textSize="@dimen/uikit_textsize_medium" android:textColor="?colorHeaderSecondary" android:gravity="center" android:layout_gravity="center" android:layout_marginTop="8.0dip" android:text="@string/pomelo_add_friend_description" android:lineSpacingMultiplier="1.0" style="@style/UiKit.TextView" />
+        <LinearLayout android:layout_marginTop="32.0dip" style="@style/UiKit.ViewGroup.LinearLayout">
+            <com.google.android.material.textfield.TextInputLayout android:id="@id/friends_add_text_edit_wrap" android:layout_marginBottom="4.0dip" android:hint="@string/pomelo_add_friend_placeholder" style="@style/UiKit.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:nextFocusDown="@id/friends_add_note_edit" android:imeOptions="actionNext" style="@style/UiKit.TextInputLayout.EditText.SingleLine" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:id="@id/friends_add_note_edit_wrap" android:hint="@string/friend_request_note_hint" app:counterEnabled="true" app:counterMaxLength="120" style="@style/UiKit.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText android:id="@id/friends_add_note_edit" android:maxLines="3" android:maxLength="120" android:inputType="textCapSentences|textMultiLine" android:imeOptions="actionDone" style="@style/UiKit.TextInputLayout.EditText" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <TextView android:textSize="@dimen/uikit_textsize_small" android:textColor="?colorHeaderSecondary" android:layout_gravity="start" android:id="@id/friend_add_username_indicator" android:layout_marginTop="8.0dip" android:lineSpacingMultiplier="1.0" style="@style/UiKit.TextView" />
+        <com.google.android.material.button.MaterialButton android:enabled="false" android:ellipsize="end" android:id="@id/friends_add_send" android:layout_marginTop="16.0dip" android:text="@string/add_friend_add_manually" style="@style/FriendsAdd.Button" />
+        <TextView android:textSize="@dimen/uikit_textsize_medium" android:textColor="?colorHeaderSecondary" android:layout_gravity="start" android:layout_marginTop="32.0dip" android:text="@string/friend_invite_sheet_title" style="@style/UiKit.TextView" />
+        <LinearLayout android:orientation="horizontal" android:layout_marginTop="8.0dip" style="@style/UiKit.ViewGroup">
+            <com.google.android.material.button.MaterialButton android:id="@id/friends_add_share_link" android:layout_width="0.0dip" android:text="@string/share_link" android:layout_weight="1.0" android:layout_marginEnd="8.0dip" style="@style/UiKit.Material.Button.Secondary" />
+            <com.google.android.material.button.MaterialButton android:id="@id/friends_add_copy_link" android:layout_width="0.0dip" android:text="@string/copy_link" android:layout_weight="1.0" style="@style/UiKit.Material.Button.Secondary" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

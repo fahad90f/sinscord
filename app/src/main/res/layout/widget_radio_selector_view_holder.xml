@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<com.discord.views.IconRow android:id="@id/icon_row" android:layout_width="fill_parent" android:layout_height="wrap_content" android:foreground="?bg_pressed_highlight"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

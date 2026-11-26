@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<androidx.core.widget.NestedScrollView android:background="?primary_630" style="@style/UiKit.ViewGroup.ScrollView.Page"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:paddingBottom="8.0dip" style="@style/UiKit.ViewGroup.LinearLayout">
+        <androidx.constraintlayout.widget.ConstraintLayout style="@style/UiKit.Sheet.Header">
+            <androidx.constraintlayout.widget.Guideline style="@style/UiKit.Sheet.Guideline" />
+            <FrameLayout style="@style/UiKit.Sheet.Header.Icon">
+                <com.discord.views.GuildView android:id="@+id/channels_list_item_text_actions_icon" style="@style/Avatar.Large" />
+            </FrameLayout>
+            <TextView android:id="@id/channels_list_item_text_actions_title" style="@style/UiKit.Sheet.Header.Title" />
+            <TextView android:id="@id/channels_list_item_text_actions_subtitle" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View style="@style/UiKit.Settings.Divider" />
+        <TextView android:id="@id/dm_action_profile" android:text="@string/profile" app:drawableStartCompat="?ic_account" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/action_open_chat" android:text="@string/open_chat" app:drawableStartCompat="?ic_chat_bubble" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/action_join_stage" android:text="@string/stage_channel_join_button" app:drawableStartCompat="?ic_channel_stage" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/action_hide_names" android:text="@string/voice_channel_hide_names" app:drawableStartCompat="?ic_account" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/text_action_mark_as_read" android:text="@string/mark_as_read" app:drawableStartCompat="?ic_visibility" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/text_action_opt_in" android:text="@string/channel_opt_in" app:drawableStartCompat="?ic_add_circle_outline" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/text_action_pin_channel" android:text="@string/pin_channel_to_top" app:drawableStartCompat="@drawable/ic_pin_24dp" app:drawableTint="?colorInteractiveNormal" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/text_action_mute" app:drawableStartCompat="?ic_channel_mute" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/text_action_thread_browser" android:text="@string/threads" app:drawableStartCompat="?ic_thread" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/action_channel_settings" app:drawableStartCompat="?ic_settings" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/action_channel_notifications" android:text="@string/notification_settings" app:drawableStartCompat="?ic_notifications_a60" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/action_invite" android:text="@string/instant_invite" app:drawableStartCompat="?ic_person_add" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/action_copy_link" android:text="@string/copy_link" app:drawableStartCompat="@drawable/ic_link_white_24dp" app:drawableTint="?colorInteractiveNormal" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/action_clone_channel" app:drawableStartCompat="?ic_copy" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:id="@id/action_rehide_spoiler" android:visibility="gone" android:text="@string/spoiler_channel_clear_agree" app:drawableStartCompat="?ic_visibility_off" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:textColor="@color/status_red_500" android:id="@id/action_end_stage" android:text="@string/end_stage" app:drawableStartCompat="?ic_close_24dp" app:drawableTint="@color/status_red_500" style="@style/UiKit.Settings.Item.Icon" />
+        <TextView android:textColor="@color/status_red_500" android:id="@id/action_close_dm" app:drawableStartCompat="@drawable/ic_remove_friend_red_24dp" app:drawableTint="@color/status_red_500" style="@style/UiKit.Settings.Item.Icon" />
+        <LinearLayout android:orientation="vertical" android:id="@id/plugin_context_menu_items" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <View android:id="@id/developer_divider" style="@style/UiKit.Settings.Divider" />
+        <TextView android:id="@id/action_copy_id" android:text="@string/copy_id" app:drawableStartCompat="?ic_copy" style="@style/UiKit.Settings.Item.Icon" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

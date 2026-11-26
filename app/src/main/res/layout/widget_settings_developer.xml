@@ -1,4 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<androidx.coordinatorlayout.widget.CoordinatorLayout style="@style/UiKit.ViewGroup.Page"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout android:paddingBottom="@dimen/list_bottom_padding" style="@style/UiKit.ViewGroup.LinearLayout">
+            <com.discord.views.CheckedSetting android:id="@id/settings_developer_force_canary" app:cs_subtext="@string/manticord_use_canary_help" app:cs_text="@string/manticord_use_canary" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_developer_verbose_boot" app:cs_subtext="Shows every startup event instead of concise connection status" app:cs_text="Verbose Boot" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_developer_log_gateway_events" app:cs_subtext="Logs redacted inbound and outbound Gateway payloads to GatewayEvents" app:cs_text="Log Gateway Events" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_developer_log_gateway_lifecycle" app:cs_subtext="Logs Gateway connection and ready transitions without payload data" app:cs_text="Log Gateway Lifecycle" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_developer_log_gateway_voice_states" app:cs_subtext="Logs voice-state routing metadata without member content" app:cs_text="Log Gateway Voice States" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_developer_floating_shortcut" app:cs_subtext="Shows a movable shortcut to Developer Options" app:cs_text="Floating Developer Shortcut" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_developer_log_rest_requests" app:cs_subtext="Logs sanitized REST headers, payload structure, and API errors alongside REST metadata" app:cs_text="Log REST Requests and Responses" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_developer_legacy_message_uploads" app:cs_subtext="@string/feature_legacy_message_uploads_description" app:cs_text="@string/feature_legacy_message_uploads" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_developer_trust_all_domains" app:cs_subtext="@string/developer_trust_all_domains_description" app:cs_text="@string/developer_trust_all_domains" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_developer_view_raw" app:cs_subtext="@string/developer_view_raw_description" app:cs_text="@string/developer_view_raw" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <TextView android:id="@id/settings_developer_rest_log" android:text="@string/rest_log_title" android:drawablePadding="16.0dip" app:drawableEndCompat="@drawable/ic_chevron_right_grey_12dp" app:drawableTint="?colorInteractiveNormal" style="@style/UiKit.ListItem" />
+            <TextView android:id="@id/settings_developer_startup_metrics" android:text="@string/startup_metrics_title" android:drawablePadding="16.0dip" app:drawableEndCompat="@drawable/ic_chevron_right_grey_12dp" app:drawableTint="?colorInteractiveNormal" style="@style/UiKit.ListItem" />
+            <TextView android:id="@id/settings_developer_nitro_override" android:drawablePadding="16.0dip" app:drawableEndCompat="@drawable/ic_chevron_right_grey_12dp" app:drawableTint="?colorInteractiveNormal" style="@style/UiKit.ListItem" />
+            <TextView android:id="@id/settings_developer_design_systems" android:text="@string/design_systems" android:drawableEnd="@drawable/ic_chevron_right_grey_12dp" style="@style/UiKit.Settings.Item.Icon" />
+            <TextView android:id="@id/settings_developer_bot_ui_kit" android:text="@string/bot_ui_kit" android:drawableEnd="@drawable/ic_chevron_right_grey_12dp" style="@style/UiKit.Settings.Item.Icon" />
+            <TextView android:text="Experiments" style="@style/UiKit.Settings.Item.Header" />
+            <TextView android:text="Not seeing your experiment? Add it to ExperimentRegistry.kt" android:layout_marginStart="16.0dip" style="@style/UiKit.TextView.Subtext" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/developer_settings_experiments" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" style="@style/UiKit.ViewGroup.RecyclerView" />
+            <TextView android:text="Notice cache" style="@style/UiKit.Settings.Item.Header" />
+            <com.google.android.material.card.MaterialCardView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="8.0dip" app:cardBackgroundColor="?colorBackgroundSecondary" app:cardElevation="@dimen/app_elevation" style="@style/Widget.MaterialComponents.CardView">
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/developer_settings_notices" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" style="@style/UiKit.ViewGroup.RecyclerView" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:text="Crashes" style="@style/UiKit.Settings.Item.Header" />
+            <com.google.android.material.button.MaterialButton android:id="@id/developer_settings_crash_kotlin" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:text="Unhandled UI Thread Exception" style="@style/UiKit.Material.Button" />
+            <com.google.android.material.button.MaterialButton android:id="@id/developer_settings_crash_discord_nonfatal" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:text="Non-fatal Exception" style="@style/UiKit.Material.Button" />
+            <com.google.android.material.button.MaterialButton android:id="@id/developer_settings_crash_discord_jnibridge" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:text="libdiscord Crash" style="@style/UiKit.Material.Button" />
+            <TextView android:text="Cache Actions" style="@style/UiKit.Settings.Item.Header" />
+            <com.google.android.material.button.MaterialButton android:id="@id/developer_settings_write_caches" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:text="Write Caches" style="@style/UiKit.Material.Button" />
+            <TextView android:text="Clearing also discards the cached gateway versions, so the next connection is a full one. Anything unsynced is lost." android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" style="@style/UiKit.TextView.Subtext" />
+            <com.google.android.material.button.MaterialButton android:id="@id/developer_settings_clear_caches" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:text="Clear Caches" style="@style/UiKit.Material.Button.Red" />
+            <TextView android:text="Account" style="@style/UiKit.Settings.Item.Header" />
+            <TextView android:text="Your token is full access to your account. Anyone who has it can log in as you, read your messages and change your settings without your password or 2FA." android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" style="@style/UiKit.TextView.Subtext" />
+            <com.google.android.material.button.MaterialButton android:id="@id/developer_settings_copy_token" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:text="Copy Token" style="@style/UiKit.Material.Button.Red" />
+            <TextView android:id="@id/textView" android:text="Actions" style="@style/UiKit.Settings.Item.Header" />
+            <com.google.android.material.button.MaterialButton android:id="@id/developer_settings_simulate_gateway_reconnect" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:text="Simulate Gateway Reconnect" style="@style/UiKit.Material.Button" />
+            <com.google.android.material.button.MaterialButton android:id="@id/developer_settings_disconnect_gateway_resumable" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:text="Disconnect Gateway (Keep Session)" style="@style/UiKit.Material.Button" />
+            <com.google.android.material.button.MaterialButton android:id="@id/developer_settings_resume_gateway" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:text="Resume Gateway" style="@style/UiKit.Material.Button" />
+            <com.google.android.material.button.MaterialButton android:id="@id/developer_settings_disconnect_gateway" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:text="Disconnect Gateway" style="@style/UiKit.Material.Button.Red" />
+            <com.google.android.material.button.MaterialButton android:id="@id/developer_settings_reconnect_gateway" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:text="Reconnect Gateway (New Session)" style="@style/UiKit.Material.Button" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

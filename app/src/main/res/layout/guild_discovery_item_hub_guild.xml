@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center_vertical" android:background="?attr/bg_pressed_highlight" android:paddingTop="12dp" android:paddingBottom="12dp" android:paddingStart="16dp" android:paddingEnd="16dp" style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
-    <com.discord.views.GuildView android:id="@+id/discovery_hub_guild_icon" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginEnd="16dp" android:scaleType="centerCrop" android:importantForAccessibility="no" app:gv_text_size="16sp" style="@style/UiKit.ImageView"/>
-    <TextView android:id="@+id/discovery_hub_guild_name" android:layout_width="0dp" android:layout_weight="1" style="@style/UiKit.TextView.H2"/>
+<LinearLayout android:gravity="center_vertical" android:background="?bg_pressed_highlight" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:paddingStart="16.0dip" android:paddingEnd="16.0dip" style="@style/UiKit.ViewGroup.LinearLayout.Horizontal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.discord.views.GuildView android:id="@id/discovery_hub_guild_icon" android:layout_width="40.0dip" android:layout_height="40.0dip" android:scaleType="centerCrop" android:importantForAccessibility="no" android:layout_marginEnd="16.0dip" app:gv_text_size="16.0sp" style="@style/UiKit.ImageView" />
+    <TextView android:id="@id/discovery_hub_guild_name" android:layout_width="0.0dip" android:layout_weight="1.0" style="@style/UiKit.TextView.H2" />
 </LinearLayout>

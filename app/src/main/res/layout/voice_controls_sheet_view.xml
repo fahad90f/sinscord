@@ -1,4 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<merge style="@style/VoiceControlsSheet"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:id="@id/peek_container" style="@style/UiKit.ViewGroup.LinearLayout">
+        <View android:layout_gravity="center" android:id="@id/handle" android:background="@drawable/rounded_rectangle_8dp_radius" android:layout_width="40.0dip" android:layout_height="4.0dip" android:layout_marginTop="4.0dip" android:layout_marginBottom="8.0dip" android:alpha="0.8" />
+        <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_marginBottom="16.0dip" style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+            <FrameLayout android:id="@id/video_button_wrap" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center" android:id="@id/video_button" android:background="@drawable/drawable_circle_black" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_videocam_white_24dp" android:contentDescription="@string/video" app:backgroundTint="?colorBackgroundPrimary" style="@style/UiKit.Calls.ButtonCircle" />
+            </FrameLayout>
+            <FrameLayout android:id="@id/mute_button_wrap" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center" android:id="@id/mute_button" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_mic_white_24dp" android:contentDescription="@string/mute" style="@style/UiKit.Calls.ButtonCircle" />
+            </FrameLayout>
+            <FrameLayout android:id="@id/screen_share_button_wrap" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center" android:id="@id/screen_share_button" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_mobile_screenshare_24dp" android:contentDescription="@string/mobile_stream_screen_share" style="@style/UiKit.Calls.ButtonCircle" />
+            </FrameLayout>
+            <FrameLayout android:id="@id/soundboard_button_wrap" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center" android:id="@id/soundboard_button" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_soundboard_24dp" android:contentDescription="@string/guild_settings_soundboard" style="@style/UiKit.Calls.ButtonCircle" />
+            </FrameLayout>
+            <FrameLayout android:id="@id/move_to_audience_button_wrap" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center" android:id="@id/move_to_audience_button" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_stage_move_to_audience" android:contentDescription="@string/move_me_to_audience" style="@style/UiKit.Calls.ButtonCircle" />
+            </FrameLayout>
+            <FrameLayout android:id="@id/raise_hand_button_wrap" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <com.discord.views.NumericBadgingView android:layout_gravity="center" android:id="@id/raise_hand_badge" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/raise_hand_button" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_stage_raised_hand" android:contentDescription="@string/audience_raise_hand_cta" style="@style/UiKit.Calls.ButtonCircle" />
+                </com.discord.views.NumericBadgingView>
+            </FrameLayout>
+            <FrameLayout android:id="@id/stop_watching_button_wrap" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center" android:id="@id/stop_watching_button" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_stop_stream" android:contentDescription="@string/stop_watching" app:tint="@color/white" style="@style/UiKit.Calls.ButtonCircle.Red" />
+            </FrameLayout>
+            <FrameLayout android:id="@id/disconnect_button_wrap" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center" android:id="@id/disconnect_button" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_call_disconnect_24dp" android:contentDescription="@string/disconnect_self" app:tint="@color/white" style="@style/UiKit.Calls.ButtonCircle.Red" />
+            </FrameLayout>
+            <com.google.android.material.textview.MaterialTextView android:id="@id/stage_disconnect_button_large" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:visibility="gone" android:text="@string/stage_channel_leave_button" android:drawablePadding="10.0dip" android:paddingHorizontal="24.0dip" app:drawableEndCompat="@drawable/ic_stage_leave_20dp" style="@style/UiKit.Calls.ButtonPill.Red" />
+        </LinearLayout>
+        <Button android:textColor="@color/primary_100" android:gravity="center" android:id="@id/push_to_talk_button" android:background="@drawable/drawable_bg_white_alpha_24_corners_gradient" android:padding="12.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_marginBottom="16.0dip" android:text="@string/input_mode_ptt" style="@style/UiKit.TextView.Semibold" />
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView android:id="@id/secondary_actions_card" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/controls_stream_volume_group" android:background="@drawable/drawable_voice_settings_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="24.0dip">
+                <TextView android:id="@id/stream_volume_label" android:text="@string/stream_volume" style="@style/UiKit.ListItem" />
+                <com.discord.views.calls.VolumeSliderView android:id="@id/stream_volume_slider" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:layout_marginBottom="16.0dip" app:vsv_icon_tint="@color/white" app:vsv_max_volume="300" style="@style/UiKit.ViewGroup.LinearLayout.Horizontal" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/controls_shelf_group" android:background="@drawable/drawable_voice_settings_group" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/controls_activities" layout="@layout/view_voice_settings_row" />
+                <View android:id="@id/controls_activities_divider" style="@style/VoiceSettings.Divider" />
+                <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/controls_chat" layout="@layout/view_voice_settings_row" />
+            </LinearLayout>
+            <TextView android:textColor="?colorTextMuted" android:id="@id/controls_voice_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:layout_marginBottom="8.0dip" android:text="@string/voice_settings" style="@style/UiKit.TextView.Semibold" />
+            <LinearLayout android:orientation="vertical" android:id="@id/controls_voice_group" android:background="@drawable/drawable_voice_settings_group" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/controls_deafen" layout="@layout/view_voice_settings_switch_row" />
+                <View style="@style/VoiceSettings.Divider" />
+                <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/controls_audio_output" layout="@layout/view_voice_settings_row" />
+                <View style="@style/VoiceSettings.Divider" />
+                <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/controls_only_show_videos" layout="@layout/view_voice_settings_switch_row" />
+                <View style="@style/VoiceSettings.Divider" />
+                <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/controls_show_self_video" layout="@layout/view_voice_settings_switch_row" />
+                <View android:id="@id/controls_invite_divider" style="@style/VoiceSettings.Divider" />
+                <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/controls_invite" layout="@layout/view_voice_settings_row" />
+            </LinearLayout>
+            <include android:id="@+id/controls_noise_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" layout="@layout/view_voice_noise_options" />
+            <LinearLayout android:orientation="vertical" android:id="@id/controls_settings_group" android:background="@drawable/drawable_voice_settings_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:layout_marginBottom="16.0dip">
+                <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/controls_voice_settings" layout="@layout/view_voice_settings_row" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</merge>

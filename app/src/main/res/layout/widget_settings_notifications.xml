@@ -1,4 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<androidx.coordinatorlayout.widget.CoordinatorLayout style="@style/UiKit.ViewGroup.Page"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView style="@style/AppTheme.AppBarScrollingViewBehavior">
+        <LinearLayout android:animateLayoutChanges="true" style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView android:text="@string/form_label_mobile_notifications_inapp_label" style="@style/UiKit.Settings.Item.Header" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_inapp_notifs_switch" app:cs_text="@string/form_label_mobile_notifications_inapp_desc" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <View style="@style/UiKit.Settings.Divider" />
+            <TextView android:text="@string/form_label_mobile_notifications_system_label" style="@style/UiKit.Settings.Item.Header" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_enabled" app:cs_text="@string/form_label_mobile_notifications_system_desc" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <LinearLayout android:id="@id/settings_notifications_wrap" style="@style/UiKit.ViewGroup.LinearLayout">
+                <TextView android:text="@string/form_label_mobile_notifications_behavior" style="@style/UiKit.Settings.Item.Header" />
+                <com.discord.views.CheckedSetting android:id="@id/settings_notifications_blink" app:cs_text="@string/form_label_mobile_notifications_blink" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+                <com.discord.views.CheckedSetting android:id="@id/settings_notifications_vibrations" app:cs_text="@string/form_label_mobile_notifications_vibrations" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+                <com.discord.views.CheckedSetting android:id="@id/settings_notifications_wake" app:cs_text="@string/form_label_mobile_notifications_wake" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+                <View style="@style/UiKit.Settings.Divider" />
+                <TextView android:text="@string/sounds" style="@style/UiKit.Settings.Item.Header" />
+                <com.discord.views.CheckedSetting android:id="@id/settings_notifications_mute_all" app:cs_text="@string/form_label_mobile_notifications_sound_disable" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            </LinearLayout>
+            <View style="@style/UiKit.Settings.Divider" />
+            <TextView android:text="@string/reaction_notifications_header" style="@style/UiKit.Settings.Item.Header" />
+            <TextView android:textSize="@dimen/uikit_textsize_medium" android:text="@string/reaction_notifications_help" style="@style/UiKit.Settings.Item" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_reactions_all" app:cs_text="@string/form_label_all_messages" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_reactions_dms" app:cs_text="@string/reaction_notifications_only_dms" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_reactions_never" app:cs_text="@string/reaction_notifications_never" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            <TextView android:text="@string/form_label_mobile_notifications_user_label" style="@style/UiKit.Settings.Item.Header" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_stream" app:cs_text="@string/form_label_mobile_notifications_stream_desc" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_friend_anniversary" app:cs_subtext="@string/notifications_friend_anniversary_help" app:cs_text="@string/notifications_friend_anniversary" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_voice_activity" app:cs_subtext="@string/notifications_voice_activity_help" app:cs_text="@string/notifications_voice_activity" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_friends_online" app:cs_subtext="@string/notifications_friends_online_help" app:cs_text="@string/notifications_friends_online" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_status" app:cs_subtext="@string/notifications_status_help" app:cs_text="@string/notifications_status" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_friend_gaming" app:cs_subtext="@string/notifications_friend_gaming_help" app:cs_text="@string/notifications_friend_gaming" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_profile_updates" app:cs_subtext="@string/notifications_profile_updates_help" app:cs_text="@string/notifications_profile_updates" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_upcoming_events" app:cs_subtext="@string/notifications_upcoming_events_help" app:cs_text="@string/notifications_upcoming_events" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <TextView android:text="@string/notifications_share_header" style="@style/UiKit.Settings.Item.Header" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_share_online" app:cs_subtext="@string/notifications_share_come_online_help" app:cs_text="@string/notifications_share_come_online" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_share_profile" app:cs_subtext="@string/notifications_share_profile_update_help" app:cs_text="@string/notifications_share_profile_update" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <TextView android:text="@string/badges" style="@style/UiKit.Settings.Item.Header" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_experimental_unreads" app:cs_text="@string/experimental_unreads_title" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_notifications_mention_on_all_messages" app:cs_text="@string/user_settings_mention_on_all_messages" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

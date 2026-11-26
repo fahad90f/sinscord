@@ -128,7 +128,7 @@
                 <View android:id="@+id/channel_settings_auto_archive_divider" android:layout_width="match_parent" android:layout_height="0dp"/>
                 <TextView android:text="@string/form_thread_auto_archive_section_label" style="@style/ChannelSettings.Label"/>
                 <TextView android:layout_marginTop="0dp" android:layout_marginBottom="8dp" android:text="@string/form_help_default_auto_archive_duration" style="@style/ChannelSettings.Caption"/>
-                <include android:id="@+id/duration_selector" layout="@layout/widget_channel_settings_archive_modern"/>
+                <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/duration_selector" layout="@layout/widget_channel_settings_archive_modern"/>
             </LinearLayout>
 
             <LinearLayout android:id="@+id/channel_settings_section_integrations" style="@style/UiKit.ViewGroup.LinearLayout">

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="16.0dip" android:paddingEnd="12.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/uikit_textsize_small" android:textColor="?colorHeaderSecondary" android:id="@id/result_count" android:layout_width="0.0dip" android:layout_height="wrap_content" android:includeFontPadding="false" android:layout_weight="1.0" android:textAllCaps="true" style="@style/UiKit.TextView.Semibold" />
+    <TextView android:textSize="@dimen/uikit_textsize_small" android:textColor="?colorInteractiveNormal" android:gravity="center_vertical" android:id="@id/result_sort" android:background="@drawable/drawable_forum_post_footer_item_bg" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="0.0dip" android:minHeight="0.0dip" android:includeFontPadding="false" android:drawablePadding="2.0dip" android:paddingStart="8.0dip" android:paddingEnd="6.0dip" app:drawableEndCompat="@drawable/ic_chevron_down_white_12dp" app:drawableTint="?colorInteractiveNormal" style="@style/UiKit.TextView.Semibold" />
+</LinearLayout>

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<RelativeLayout android:id="@id/ban_container" android:background="?selectableItemBackground" android:paddingLeft="16.0dip" android:paddingTop="16.0dip" android:paddingRight="16.0dip" android:focusable="true" android:clickable="true" style="@style/UiKit.ViewGroup.RelativeLayout"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.discord.views.VitoImageView android:id="@id/ban_list_item_avatar" android:layout_alignParentStart="true" style="@style/Avatar.Standard" />
+    <TextView android:id="@id/ban_list_item_name" android:layout_width="fill_parent" android:layout_alignTop="@id/ban_list_item_avatar" android:layout_marginStart="16.0dip" android:layout_toEndOf="@id/ban_list_item_avatar" app:drawableEndCompat="@drawable/ic_unban_grey" style="@style/UiKit.TextView.Large.SingleLine" />
+    <TextView android:textColor="?primary_300" android:id="@id/ban_list_item_username" android:visibility="gone" android:layout_width="fill_parent" android:layout_below="@id/ban_list_item_name" android:layout_marginStart="16.0dip" android:layout_toEndOf="@id/ban_list_item_avatar" style="@style/UiKit.TextView.Subtext.SingleLine" />
+    <View android:layout_marginTop="16.0dip" android:layout_below="@id/ban_list_item_avatar" android:layout_alignParentBottom="true" android:layout_toEndOf="@id/ban_list_item_avatar" style="@style/UiKit.Settings.Divider" />
+</RelativeLayout>

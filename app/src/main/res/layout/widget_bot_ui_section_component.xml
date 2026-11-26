@@ -26,7 +26,7 @@
             android:layout_marginStart="12dp" />
     </LinearLayout>
 
-    <include
+    <include android:layout_width="match_parent" android:layout_height="wrap_content"
         android:id="@+id/error_row"
         layout="@layout/view_interaction_failed_label" />
 </com.discord.widgets.botuikit.views.v2.SectionComponentView>

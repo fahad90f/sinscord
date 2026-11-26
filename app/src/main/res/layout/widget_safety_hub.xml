@@ -17,9 +17,9 @@
                     <TextView android:id="@+id/safety_hub_standing_short" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="@dimen/uikit_textsize_small" style="@style/UiKit.TextView.Semibold"/>
                 </LinearLayout>
 
-                <include android:id="@+id/safety_hub_active" layout="@layout/widget_safety_hub_violations_card"/>
+                <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/safety_hub_active" layout="@layout/widget_safety_hub_violations_card"/>
 
-                <include android:id="@+id/safety_hub_expired" layout="@layout/widget_safety_hub_violations_card"/>
+                <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/safety_hub_expired" layout="@layout/widget_safety_hub_violations_card"/>
 
             </LinearLayout>
         </ScrollView>

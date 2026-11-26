@@ -1,5 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.discord.views.CheckedSetting xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cs_view_type="switchview"
-    style="@style/UiKit.CheckedSetting.Themed" />
+<com.discord.views.CheckedSetting app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

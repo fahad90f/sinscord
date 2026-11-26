@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<androidx.coordinatorlayout.widget.CoordinatorLayout style="@style/UiKit.ViewGroup.CoordinatorLayout.Page"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout">
+        <androidx.appcompat.widget.Toolbar app:navigationContentDescription="@string/back" app:navigationIcon="?ic_action_bar_back" app:subtitle="@string/user_settings" app:title="@string/authorized_apps" style="@style/AppTheme.Toolbar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView android:text="@string/applications_and_connections" style="@style/UiKit.Settings.Item.Header" />
+            <TextView android:text="@string/applications_and_connections_body" style="@style/UiKit.Settings.Item.Addition" />
+            <TextView android:id="@id/authorized_apps_group_header" android:visibility="gone" android:text="@string/apps" style="@style/UiKit.Settings.Item.Header" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/authorized_apps_list" style="@style/UiKit.ViewGroup.RecyclerView" />
+            <TextView android:gravity="center" android:id="@id/authorized_apps_empty" android:visibility="gone" android:layout_marginTop="32.0dip" android:layout_marginBottom="32.0dip" android:text="@string/no_authorized_apps" style="@style/UiKit.TextView.H1.Bold" />
+            <ProgressBar android:layout_gravity="center_horizontal" android:id="@id/authorized_apps_loading" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginTop="32.0dip" android:layout_marginBottom="32.0dip" android:indeterminate="true" android:indeterminateTint="?theme_chat_loading_spinner_color" android:indeterminateTintMode="src_in" style="@style/Widget.AppCompat.ProgressBar" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_call_toolbar_icon_camera_swap" android:id="@id/menu_call_switch_camera" android:title="@string/camera_switch" app:showAsAction="always" />
+    <item android:icon="@drawable/ic_call_toolbar_icon_sound" android:id="@id/menu_call_audio_output" android:title="@string/switch_audio_output" app:showAsAction="always" />
+    <item android:icon="@drawable/ic_call_toolbar_icon_invite" android:id="@id/menu_call_invite" android:title="@string/invite_a_friend" app:showAsAction="always" />
+    <item android:id="@id/menu_text_in_voice" android:title="@string/show_chat" app:actionLayout="@layout/icon_text_in_voice_layout" app:showAsAction="always" />
+</menu>

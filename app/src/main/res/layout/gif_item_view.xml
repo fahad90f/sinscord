@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginBottom="8.0dip" app:cardBackgroundColor="@color/transparent" app:cardCornerRadius="4.0dip" app:cardElevation="0.0dip" app:strokeWidth="0.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.discord.views.VitoImageView android:id="@id/gif_item_image" android:layout_width="fill_parent" android:layout_height="fill_parent" app:placeholderImage="?colorBackgroundModifierAccent" />
+    <ImageView android:layout_gravity="end|center|top" android:id="@id/gif_item_favorite" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_margin="8.0dip" android:src="@drawable/ic_emoji_picker_category_favorites_star" />
+</androidx.cardview.widget.CardView>

@@ -1,4 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<com.discord.widgets.user.profile.ProfilePagerScrollView android:background="?colorBackgroundSecondary" android:focusable="true" android:focusableInTouchMode="true" android:contentDescription="@string/profile" style="@style/UiKit.ViewGroup.NestedScrollView"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:id="@id/user_sheet_content" android:layout_marginBottom="16.0dip" style="@style/UiKit.ViewGroup.LinearLayout">
+            <FrameLayout android:id="@id/user_sheet_header_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.discord.widgets.user.profile.UserProfileHeaderView android:id="@id/user_sheet_profile_header_view" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent" app:user_profile_header_background_color="?colorBackgroundSecondary" />
+                <LinearLayout android:layout_gravity="end|center|top" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginEnd="16.0dip">
+                    <ImageView android:id="@id/user_sheet_remove_friend_button" android:background="@drawable/drawable_user_profile_header_button" android:padding="8.0dip" android:visibility="gone" android:layout_width="32.0dip" android:layout_height="32.0dip" android:src="@drawable/ic_person_check_24dp" android:contentDescription="@string/remove_friend" android:layout_marginEnd="8.0dip" app:tint="@color/white" style="@style/UiKit.ImageView.Clickable" />
+                    <ImageView android:id="@id/user_sheet_more_button" android:background="@drawable/drawable_user_profile_header_button" android:padding="6.0dip" android:layout_width="36.0dip" android:layout_height="36.0dip" android:src="@drawable/ic_more_horizontal_24dp" android:contentDescription="@string/more" app:tint="@color/white" style="@style/UiKit.ImageView.Clickable" />
+                </LinearLayout>
+            </FrameLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/user_sheet_mutuals" android:background="?colorBackgroundTertiary" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:paddingBottom="12.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.discord.views.PileView android:id="@id/user_sheet_mutual_friends_pile" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="6.0dip" app:pile_itemOverlap="6.0dip" app:pile_itemSize="20.0dip" app:pile_maxItems="3" />
+                <TextView android:textColor="?colorHeaderPrimary" android:id="@id/user_sheet_mutual_friends" android:background="?selectableItemBackground" style="@style/UiKit.TextView.Medium.SingleLine" />
+                <TextView android:textColor="?colorHeaderPrimary" android:id="@id/user_sheet_mutuals_separator" android:text="•" android:importantForAccessibility="no" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip" style="@style/UiKit.TextView.Medium" />
+                <TextView android:textColor="?colorHeaderPrimary" android:id="@id/user_sheet_mutual_guilds" android:background="?selectableItemBackground" style="@style/UiKit.TextView.Medium.SingleLine" />
+            </LinearLayout>
+            <FrameLayout android:id="@id/user_sheet_profile_add_to_server_container" android:background="?colorBackgroundTertiary" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:paddingBottom="16.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingHorizontal="16.0dip">
+                <com.google.android.material.button.MaterialButton android:id="@id/user_sheet_profile_add_to_server_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/application_add_to_server" style="@style/UiKit.Material.Button" />
+            </FrameLayout>
+            <com.google.android.flexbox.FlexboxLayout android:id="@id/user_sheet_profile_edit_container" android:background="?colorBackgroundTertiary" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:paddingBottom="16.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingHorizontal="16.0dip" app:flexDirection="row" app:justifyContent="space_between">
+                <com.google.android.material.button.MaterialButton android:id="@id/user_sheet_profile_edit_button" android:text="@string/edit_default_profile" app:cornerRadius="8.0dip" app:layout_flexBasisPercent="50.0%" app:layout_flexGrow="1.0" style="@style/UiKit.Material.Button.Fit" />
+                <com.google.android.material.button.MaterialButton android:id="@id/user_sheet_profile_identity_button" android:visibility="gone" android:text="@string/change_identity" android:layout_marginStart="8.0dip" app:cornerRadius="8.0dip" app:layout_flexBasisPercent="50.0%" app:layout_flexGrow="1.0" style="@style/UiKit.Material.Button.Fit" />
+            </com.google.android.flexbox.FlexboxLayout>
+            <LinearLayout android:id="@id/user_sheet_profile_actions_container" android:background="?colorBackgroundTertiary" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="8.0dip" android:paddingStart="10.0dip" android:paddingEnd="10.0dip" style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+                <com.google.android.material.button.MaterialButton android:id="@id/user_sheet_add_friend_action_button" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="40.0dip" android:text="@string/user_profile_add_friend" android:layout_weight="1.0" android:insetTop="0.0dip" android:insetBottom="0.0dip" android:layout_marginStart="6.0dip" android:layout_marginEnd="6.0dip" app:icon="@drawable/ic_add_friend_plus" app:iconSize="18.0dip" style="@style/UserProfile.ActionButton" />
+                <com.google.android.material.button.MaterialButton android:id="@id/user_sheet_pending_friend_request_action_button" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="40.0dip" android:text="@string/user_profile_pending" android:layout_weight="1.0" android:insetTop="0.0dip" android:insetBottom="0.0dip" android:layout_marginStart="6.0dip" android:layout_marginEnd="6.0dip" app:icon="@drawable/ic_user_profile_action_pending" app:iconSize="18.0dip" style="@style/UserProfile.ActionButton" />
+                <com.google.android.material.button.MaterialButton android:id="@id/user_sheet_message_action_button" android:layout_width="0.0dip" android:layout_height="40.0dip" android:text="@string/user_profile_message" android:layout_weight="1.0" android:insetTop="0.0dip" android:insetBottom="0.0dip" android:layout_marginStart="6.0dip" android:layout_marginEnd="6.0dip" app:icon="@drawable/ic_profile_action_message_24dp" app:iconSize="18.0dip" style="@style/UserProfile.ActionButton" />
+                <com.google.android.material.button.MaterialButton android:id="@id/user_sheet_call_action_button" android:layout_width="0.0dip" android:layout_height="40.0dip" android:text="@string/user_profile_audio" android:layout_weight="1.0" android:insetTop="0.0dip" android:insetBottom="0.0dip" android:layout_marginStart="6.0dip" android:layout_marginEnd="6.0dip" app:icon="@drawable/ic_profile_action_call_24dp" app:iconSize="18.0dip" style="@style/UserProfile.ActionButton" />
+            </LinearLayout>
+            <FrameLayout android:id="@id/user_sheet_profile_tabs_container" android:background="?colorBackgroundTertiary" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="16.0dip" android:paddingEnd="16.0dip">
+                <View android:layout_gravity="bottom" android:id="@id/user_sheet_profile_tabs_rule" android:background="?colorBackgroundModifierAccent" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                <com.google.android.material.tabs.TabLayout android:id="@id/user_sheet_profile_tabs" android:layout_width="fill_parent" android:layout_height="48.0dip" app:tabGravity="fill" app:tabIndicator="@drawable/drawable_profile_tab_indicator" app:tabIndicatorColor="?colorTextBrand" app:tabIndicatorFullWidth="true" app:tabIndicatorHeight="3.0dip" app:tabMode="fixed" app:tabPaddingEnd="0.0dip" app:tabPaddingStart="0.0dip" app:tabSelectedTextColor="?colorTextBrand" app:tabTextAppearance="@style/App.TabLayout.Text" app:tabTextColor="?colorTextMuted" />
+            </FrameLayout>
+            <FrameLayout android:id="@id/user_sheet_profile_pages" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:id="@id/user_sheet_main_tab_content" style="@style/UiKit.ViewGroup.LinearLayout">
+                    <androidx.cardview.widget.CardView android:id="@id/user_sheet_profile_stage_actions_card" android:visibility="gone" android:layout_marginTop="16.0dip" style="@style/UserProfile.Section.Card">
+                        <com.discord.widgets.stage.usersheet.UserProfileStageActionsView android:id="@id/user_sheet_profile_stage_actions_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    </androidx.cardview.widget.CardView>
+                    <TextView android:id="@id/user_sheet_incoming_friend_request_header" android:visibility="gone" android:text="@string/incoming_friend_request" style="@style/UserProfile.Section.Header" />
+                    <LinearLayout android:id="@id/user_sheet_friend_request_incoming_container" android:visibility="gone" android:layout_width="fill_parent" android:paddingStart="16.0dip" android:paddingEnd="16.0dip" style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+                        <com.google.android.material.button.MaterialButton android:id="@id/user_sheet_friend_request_ignore_button" android:text="@string/friend_request_ignore" android:layout_weight="1.0" android:layout_marginEnd="8.0dip" style="@style/UiKit.Material.Button.Secondary.Fit" />
+                        <com.google.android.material.button.MaterialButton android:id="@id/user_sheet_friend_request_accept_button" android:text="@string/friend_request_accept" android:layout_weight="1.0" style="@style/UiKit.Material.Button.Green.Fit" />
+                    </LinearLayout>
+                    <androidx.cardview.widget.CardView android:id="@id/user_sheet_private_profile_card" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" app:cardBackgroundColor="?colorBackgroundSecondary" app:cardCornerRadius="8.0dip" app:cardElevation="0.0dip">
+                        <TextView android:textSize="@dimen/uikit_textsize_small" android:textColor="?colorTextMuted" android:id="@id/user_sheet_private_profile_text" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/UiKit.TextView" />
+                    </androidx.cardview.widget.CardView>
+                    <com.google.android.flexbox.FlexboxLayout android:orientation="horizontal" android:id="@id/about_me_header_container" android:paddingTop="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:alignItems="center">
+                        <TextView android:id="@id/about_me_header" android:paddingTop="0.0dip" android:visibility="gone" android:layout_width="wrap_content" android:text="@string/user_profile_bio" android:layout_marginEnd="4.0dip" style="@style/UserProfile.Section.Header" />
+                        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <com.discord.views.VitoImageView android:layout_gravity="center" android:id="@id/about_me_guild_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" app:placeholderImage="@drawable/drawable_squircle_brand_500" app:roundedCornerRadius="16.0dip" />
+                            <TextView android:textSize="8.0sp" android:gravity="center" android:layout_gravity="center" android:id="@id/about_me_guild_icon_name" android:layout_width="16.0dip" android:layout_height="16.0dip" style="@style/UiKit.TextView.SingleLine" />
+                        </FrameLayout>
+                    </com.google.android.flexbox.FlexboxLayout>
+                    <androidx.cardview.widget.CardView android:id="@id/about_me_card" android:visibility="gone" style="@style/UserProfile.Section.Card">
+                        <com.discord.utilities.view.text.LinkifiedTextView android:textSize="@dimen/uikit_textsize_small" android:textColor="?colorHeaderSecondary" android:id="@id/about_me_text" android:padding="16.0dip" android:maxLines="6" android:lineSpacingMultiplier="1.25" style="@style/UiKit.TextView" />
+                    </androidx.cardview.widget.CardView>
+                    <TextView android:id="@id/user_sheet_member_since_header" android:visibility="gone" android:text="@string/user_profile_member_since" style="@style/UserProfile.Section.Header" />
+                    <androidx.cardview.widget.CardView android:id="@id/user_sheet_member_since_card" android:visibility="gone" style="@style/UserProfile.Section.Card">
+                        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                            <ImageView android:id="@id/user_sheet_member_since_discord_icon" android:tag="profile_tint_icon" android:layout_width="16.0dip" android:layout_height="16.0dip" android:src="@drawable/img_logo_square" android:importantForAccessibility="no" android:layout_marginEnd="6.0dip" app:tint="?colorInteractiveNormal" />
+                            <TextView android:textSize="@dimen/uikit_textsize_medium" android:id="@id/user_sheet_member_since_discord" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/UiKit.TextView" />
+                            <TextView android:textSize="@dimen/uikit_textsize_medium" android:textColor="?colorTextMuted" android:id="@id/user_sheet_member_since_divider" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="•" android:importantForAccessibility="no" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip" style="@style/UiKit.TextView" />
+                            <com.discord.views.GuildView android:id="@id/user_sheet_member_since_guild_icon" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:importantForAccessibility="no" android:layout_marginEnd="6.0dip" app:gv_text_size="6.0sp" />
+                            <TextView android:textSize="@dimen/uikit_textsize_medium" android:id="@id/user_sheet_member_since_guild" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/UiKit.TextView" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <TextView android:id="@id/user_sheet_friends_since_header" android:visibility="gone" android:text="@string/user_profile_friends_since" style="@style/UserProfile.Section.Header" />
+                    <androidx.cardview.widget.CardView android:id="@id/user_sheet_friends_since_card" android:visibility="gone" style="@style/UserProfile.Section.Card">
+                        <TextView android:textSize="@dimen/uikit_textsize_medium" android:id="@id/user_sheet_friends_since" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/UiKit.TextView" />
+                    </androidx.cardview.widget.CardView>
+                    <TextView android:id="@id/user_sheet_profile_voice_settings_header" android:text="@string/voice_settings" style="@style/UserProfile.Section.Header" />
+                    <androidx.cardview.widget.CardView android:id="@id/voice_settings_view_card" android:visibility="gone" style="@style/UserProfile.Section.Card">
+                        <com.discord.widgets.user.usersheet.UserProfileVoiceSettingsView android:id="@id/user_sheet_profile_voice_settings_view" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    </androidx.cardview.widget.CardView>
+                    <FrameLayout android:id="@id/rich_presence_container" android:visibility="gone" style="@style/UiKit.ViewGroup" />
+                    <LinearLayout android:id="@id/user_sheet_guild_container" style="@style/UiKit.ViewGroup.LinearLayout">
+                        <TextView android:id="@id/user_sheet_guild_header" style="@style/UserProfile.Section.Header" />
+                        <com.discord.widgets.roles.RolesListView android:id="@id/user_sheet_roles_list" android:contentDescription="@string/roles" style="@style/UserProfile.Section" />
+                        <TextView android:id="@id/user_sheet_admin_header" android:visibility="gone" android:text="@string/moderator_actions" style="@style/UserProfile.Section.Header" />
+                        <androidx.cardview.widget.CardView android:id="@id/user_sheet_admin_card" style="@style/UserProfile.Section.Card">
+                            <com.discord.widgets.user.profile.UserProfileAdminView android:id="@id/user_sheet_admin_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                    <TextView android:id="@id/user_sheet_connections_header" android:visibility="gone" android:text="@string/connections" style="@style/UserProfile.Section.Header" />
+                    <androidx.cardview.widget.CardView android:id="@id/user_sheet_connections_card" style="@style/UserProfile.Section.Card">
+                        <com.discord.widgets.user.profile.UserProfileConnectionsView android:id="@id/user_sheet_connections_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    </androidx.cardview.widget.CardView>
+                    <TextView android:id="@id/user_sheet_note_header" android:text="@string/note" style="@style/UserProfile.Section.Header" />
+                    <com.discord.utilities.view.text.LinkifiedTextView android:textSize="@dimen/uikit_textsize_small" android:textColor="?colorHeaderSecondary" android:textColorHint="?colorTextMuted" android:gravity="center_vertical" android:id="@id/user_sheet_note_text" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:foreground="?selectableItemBackground" android:minHeight="44.0dip" android:hint="@string/note_placeholder_mobile" android:lineSpacingMultiplier="1.25" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" style="@style/UiKit.TextView" />
+                </LinearLayout>
+                <com.discord.widgets.user.profile.UserProfileWidgetsView android:id="@id/user_sheet_widgets_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <FrameLayout android:id="@id/user_sheet_plugin_tab_content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </FrameLayout>
+        </LinearLayout>
+        <com.discord.widgets.user.profile.ProfileEffectView android:id="@id/user_sheet_profile_effect" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <FrameLayout android:id="@id/user_sheet_loading_container" android:background="?colorBackgroundSecondary" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <androidx.core.widget.ContentLoadingProgressBar android:layout_gravity="center|top" android:id="@id/loading_progress_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="32.0dip" android:contentDescription="@string/loading" style="?android:progressBarStyleLarge" />
+        </FrameLayout>
+    </FrameLayout>
+</com.discord.widgets.user.profile.ProfilePagerScrollView>

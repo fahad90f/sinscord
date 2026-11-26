@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="App.TabLayout" parent="" />
+    <style name="ChannelSettings" parent="" />
+    <style name="Code" parent="" />
+    <style name="Markdown" parent="" />
+    <style name="Settings" parent="" />
+    <style name="ThemeOverlay.Microcord" parent="" />
+    <style name="ThreadBrowser" parent="" />
+</resources>

@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<RelativeLayout style="@style/UiKit.ViewGroup.Page"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_height="fill_parent" android:fillViewport="true" style="@style/UiKit.ViewGroup.ScrollView.Page">
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:paddingBottom="16.0dip" android:layout_height="fill_parent" android:paddingStart="16.0dip" android:paddingEnd="16.0dip" style="@style/UiKit.ViewGroup.LinearLayout">
+            <com.airbnb.lottie.LottieAnimationView style="@style/UiKit.Anim.Verify.By.Phone" />
+            <LinearLayout style="@style/UiKit.Copy">
+                <TextView android:text="@string/verification_phone_title" style="@style/UiKit.TextView.H1" />
+                <TextView android:gravity="center" android:layout_marginTop="4.0dip" android:text="@string/verification_phone_description" style="@style/UiKit.TextView" />
+            </LinearLayout>
+            <com.discord.views.CodeVerificationView android:id="@id/phone_digit_verification_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" />
+            <TextView android:id="@id/phone_verify_resend" android:padding="4.0dip" android:layout_marginTop="16.0dip" android:text="@string/resend_code" style="@style/UiKit.TextView.Link" />
+        </LinearLayout>
+    </ScrollView>
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat.Transparent">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar.Transparent" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <ImageView android:id="@id/close_button" android:padding="16.0dip" android:foreground="?selectableItemBackgroundBorderless" android:src="?ic_close_24dp" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:contentDescription="@string/close" style="@style/UiKit.ImageView" />
+    <com.discord.utilities.dimmer.DimmerView android:id="@id/dimmer_view" style="@style/UiKit.DimmerView" />
+</RelativeLayout>

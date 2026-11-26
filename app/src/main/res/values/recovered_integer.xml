@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="animation_time_standard">350</integer>
+    <integer name="custom_profiles_bio_max_length">190</integer>
+    <integer name="uikit_badge_angle">45</integer>
+</resources>

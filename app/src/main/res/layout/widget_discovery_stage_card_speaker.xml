@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.discord.views.VitoImageView android:layout_gravity="center" android:id="@id/discovery_stage_card_speaker_avatar" android:layout_marginEnd="8.0dip" app:fadeDuration="50" style="@style/UiKit.StageDiscoveryAvatar.Circle" />
+    <TextView android:layout_gravity="center" android:id="@id/discovery_stage_card_speaker_name" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/UiKit.TextView.Medium.SingleLine" />
+</LinearLayout>

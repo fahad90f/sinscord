@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<androidx.coordinatorlayout.widget.CoordinatorLayout style="@style/UiKit.ViewGroup.Page"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior" style="@style/UiKit.ViewGroup.LinearLayout">
+        <com.discord.views.SearchInputView android:id="@id/server_settings_roles_search" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="14.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="14.0dip" app:siv_hint="@string/search" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/server_settings_roles_recycler" android:paddingBottom="@dimen/padding_bottom_fab_screen" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" style="@style/UiKit.ViewGroup.RecyclerView" />
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@id/roles_list_add_role_fab" android:src="@drawable/ic_add_white_24dp" android:contentDescription="@string/add" style="@style/Settings.FloatingActionButton" />
+    <com.discord.utilities.dimmer.DimmerView android:id="@id/dimmer_view" style="@style/UiKit.DimmerView" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

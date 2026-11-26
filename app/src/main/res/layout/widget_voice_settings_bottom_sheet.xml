@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<androidx.core.widget.NestedScrollView android:id="@id/voice_settings_sheet_container" android:background="?colorBackgroundPrimary" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/UiKit.ViewGroup.NestedScrollView"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:layout_gravity="center_horizontal" android:background="@drawable/drawable_voice_panel_handle" android:layout_width="36.0dip" android:layout_height="4.0dip" android:layout_marginTop="8.0dip" />
+        <TextView android:gravity="center_horizontal" android:id="@id/voice_settings_sheet_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="@string/voice" style="@style/UiKit.TextView.H2" />
+        <TextView android:textColor="?colorTextMuted" android:gravity="center_horizontal" android:id="@id/voice_settings_sheet_subtitle" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="16.0dip" android:layout_marginHorizontal="16.0dip" style="@style/UiKit.TextView.Subtext" />
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/voice_settings_e2ee" android:background="@drawable/drawable_voice_e2ee_pill" android:paddingLeft="8.0dip" android:paddingTop="4.0dip" android:paddingRight="8.0dip" android:paddingBottom="4.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:paddingHorizontal="8.0dip" android:paddingVertical="4.0dip">
+            <ImageView android:layout_width="12.0dip" android:layout_height="12.0dip" android:src="@drawable/ic_lock_white_a60_16dp" android:tint="@color/status_green_500" android:importantForAccessibility="no" />
+            <TextView android:textColor="@color/status_green_500" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/e2ee_end_to_end_encrypted" android:layout_marginStart="4.0dip" style="@style/UiKit.TextView.Subtext" />
+        </LinearLayout>
+        <Space android:layout_width="fill_parent" android:layout_height="16.0dip" />
+        <LinearLayout android:orientation="vertical" android:id="@id/voice_settings_channel_group" android:background="@drawable/drawable_voice_settings_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:layout_marginHorizontal="16.0dip">
+            <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/voice_settings_channel_settings" layout="@layout/view_voice_settings_row" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/voice_settings_options_group" android:background="@drawable/drawable_voice_settings_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="24.0dip" android:layout_marginRight="16.0dip" android:layout_marginHorizontal="16.0dip">
+            <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/voice_settings_activities" layout="@layout/view_voice_settings_row" />
+            <View android:id="@id/voice_settings_activities_divider" style="@style/VoiceSettings.Divider" />
+            <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/voice_settings_menu_voice_settings" layout="@layout/view_voice_settings_row" />
+            <View android:id="@id/voice_settings_menu_voice_settings_divider" style="@style/VoiceSettings.Divider" />
+            <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/voice_settings_deafen" layout="@layout/view_voice_settings_switch_row" />
+            <View android:id="@id/voice_settings_audio_output_divider" style="@style/VoiceSettings.Divider" />
+            <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/voice_settings_audio_output" layout="@layout/view_voice_settings_row" />
+            <View android:id="@id/voice_settings_video_divider" style="@style/VoiceSettings.Divider" />
+            <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/voice_settings_toggle_video_participants" layout="@layout/view_voice_settings_switch_row" />
+            <View android:id="@id/voice_settings_self_video_divider" style="@style/VoiceSettings.Divider" />
+            <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/voice_settings_show_self_video" layout="@layout/view_voice_settings_switch_row" />
+            <View android:id="@id/voice_settings_privacy_code_divider" style="@style/VoiceSettings.Divider" />
+            <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/voice_settings_privacy_code" layout="@layout/view_voice_settings_row" />
+        </LinearLayout>
+        <include android:id="@+id/voice_settings_noise_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="24.0dip" android:layout_marginRight="16.0dip" android:layout_marginHorizontal="16.0dip" layout="@layout/view_voice_noise_options" />
+        <LinearLayout android:orientation="vertical" android:id="@id/voice_settings_voice_settings_group" android:background="@drawable/drawable_voice_settings_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="24.0dip" android:layout_marginRight="16.0dip" android:layout_marginHorizontal="16.0dip">
+            <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/voice_settings_voice_settings_row" layout="@layout/view_voice_settings_row" />
+        </LinearLayout>
+        <TextView android:textColor="?colorTextMuted" android:id="@id/voice_settings_members_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="24.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="8.0dip" android:layout_marginHorizontal="16.0dip" style="@style/UiKit.TextView.Semibold" />
+        <LinearLayout android:orientation="vertical" android:id="@id/voice_settings_members_group" android:background="@drawable/drawable_voice_settings_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:layout_marginHorizontal="16.0dip">
+            <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/voice_settings_invite" layout="@layout/view_voice_settings_row" />
+            <LinearLayout android:orientation="vertical" android:id="@id/voice_settings_members" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

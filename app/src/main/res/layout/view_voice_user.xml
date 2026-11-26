@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.discord.views.VitoImageView android:layout_gravity="center" android:id="@id/voice_user_avatar" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="4.0dip" app:actualImageScaleType="fitCenter" app:fadeDuration="0" app:roundAsCircle="true" />
+    <com.discord.views.AvatarDecorationView android:id="@id/voice_user_avatar_decoration" android:layout_width="0.0dip" android:layout_height="0.0dip" android:importantForAccessibility="no" app:avd_target="@id/voice_user_avatar" />
+    <LinearLayout android:layout_gravity="end|bottom|center" android:orientation="horizontal" android:id="@id/voice_user_status_indicators" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@id/voice_user_mute_indicator" android:background="@drawable/drawable_bg_voice_status_indicator" android:padding="4.0dip" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_mute_v2_muted" android:contentDescription="@string/voice_channel_muted" />
+        <ImageView android:id="@id/voice_user_deafen_indicator" android:background="@drawable/drawable_bg_voice_status_indicator" android:padding="4.0dip" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_deafen_v2_deafened" android:contentDescription="@string/voice_channel_deafened" android:layout_marginStart="4.0dip" app:tint="@color/white" />
+    </LinearLayout>
+    <TextView android:textSize="18.0sp" android:textColor="@color/primary_100" android:gravity="center" android:layout_gravity="center" android:id="@id/voice_user_name_display" android:background="@drawable/drawable_bg_voice_user_overlay" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" style="@style/UiKit.TextView.Bold" />
+</merge>

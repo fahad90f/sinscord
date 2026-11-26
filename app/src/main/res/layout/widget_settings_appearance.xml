@@ -1,4 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:animateLayoutChanges="true" style="@style/UiKit.ViewGroup.Page"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout android:paddingBottom="16.0dip" style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView android:id="@id/settings_appearance_theme_header" android:text="@string/theme" style="@style/UiKit.Settings.Item.Header" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_appearance_theme_system_switch" app:cs_subtext="@string/manticord_theme_system_help" app:cs_text="@string/manticord_theme_system" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_appearance_theme_light_radio" app:cs_text="@string/theme_light" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_appearance_theme_dark_radio" app:cs_text="@string/theme_ash" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_appearance_theme_darker_radio" app:cs_text="@string/theme_dark" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_appearance_theme_onyx_radio" app:cs_text="@string/theme_onyx" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            <LinearLayout android:id="@id/settings_appearance_nitro_themes_section" style="@style/UiKit.ViewGroup.LinearLayout">
+                <View style="@style/UiKit.Settings.Divider" />
+                <TextView android:id="@id/settings_appearance_nitro_themes_header" android:text="@string/manticord_nitro_themes" style="@style/UiKit.Settings.Item.Header" />
+                <TextView android:text="@string/manticord_nitro_themes_help" style="@style/UiKit.Settings.Item.SubText" />
+                <HorizontalScrollView android:paddingTop="8.0dip" android:scrollbars="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="12.0dip" android:paddingEnd="12.0dip">
+                    <LinearLayout android:orientation="horizontal" android:id="@id/settings_appearance_nitro_themes_list" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </HorizontalScrollView>
+            </LinearLayout>
+            <View style="@style/UiKit.Settings.Divider" />
+            <TextView android:id="@id/settings_appearance_local_themes_header" android:text="@string/manticord_local_themes" style="@style/UiKit.Settings.Item.Header" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_appearance_theme_material_you_radio" app:cs_text="@string/theme_material_you" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            <LinearLayout android:id="@id/settings_appearance_local_themes_list" style="@style/UiKit.ViewGroup.LinearLayout" />
+            <TextView android:id="@id/settings_appearance_custom_themes" android:text="@string/manticord_local_themes_manage" android:drawableEnd="@drawable/ic_chevron_right_grey_12dp" style="@style/UiKit.Settings.Item.Icon" />
+            <View style="@style/UiKit.Settings.Divider" />
+            <TextView android:text="@string/role_colors_header" style="@style/UiKit.Settings.Item.Header" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_appearance_role_colors_names_radio" app:cs_text="@string/role_colors_in_names" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_appearance_role_colors_dot_radio" app:cs_text="@string/role_colors_next_to_names" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_appearance_role_colors_none_radio" app:cs_text="@string/role_colors_hidden" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            <View style="@style/UiKit.Settings.Divider" />
+            <TextView android:id="@id/settings_appearance_sync_header" android:text="@string/sync" style="@style/UiKit.Settings.Item.Header" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_appearance_sync_switch" app:cs_text="@string/settings_sync" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/settings_appearance_sync_profile_themes_switch" app:cs_subtext="@string/settings_sync_profile_themes_note" app:cs_text="@string/settings_sync_profile_themes" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <View style="@style/UiKit.Settings.Divider" />
+            <LinearLayout android:id="@id/settings_appearance_font_scaling_container" style="@style/UiKit.ViewGroup.LinearLayout">
+                <TextView android:id="@id/settings_appearance_font_scale_header" android:text="@string/accessibility_font_scaling_label" style="@style/UiKit.Settings.Item.Header" />
+                <TextView android:id="@id/settings_appearance_font_scale_platform" style="@style/UiKit.Settings.Item.SubText" />
+                <RelativeLayout style="@style/UiKit.Settings.Item">
+                    <TextView android:textSize="12.0dip" android:id="@id/settings_appearance_font_scaling_seekbar_text_left" android:text="Aa" android:layout_centerVertical="true" android:importantForAccessibility="no" android:layout_alignParentStart="true" style="@style/UiKit.TextView" />
+                    <SeekBar android:id="@id/settings_appearance_font_scaling_seekbar" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip" android:max="70" android:layout_toLeftOf="@id/settings_appearance_font_scaling_seekbar_text_right" android:layout_toRightOf="@id/settings_appearance_font_scaling_seekbar_text_left" android:layout_centerVertical="true" style="@style/UiKit.SeekBar" />
+                    <TextView android:textSize="21.0dip" android:id="@id/settings_appearance_font_scaling_seekbar_text_right" android:text="Aa" android:layout_centerVertical="true" android:importantForAccessibility="no" android:layout_alignParentEnd="true" style="@style/UiKit.TextView" />
+                </RelativeLayout>
+                <FrameLayout android:background="?chat_embed_bg" android:paddingLeft="8.0dip" android:paddingTop="8.0dip" android:paddingRight="8.0dip" android:paddingBottom="16.0dip" android:layout_margin="16.0dip" style="@style/UiKit.ViewGroup">
+                    <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/chat_item" layout="@layout/widget_chat_list_adapter_item_text" />
+                </FrameLayout>
+                <TextView android:layout_gravity="left" android:id="@id/settings_appearance_font_scaling_reset" android:background="?selectableItemBackground" android:layout_marginLeft="16.0dip" android:text="@string/reset" style="@style/UiKit.TextView.Link" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <View android:id="@id/settings_appearance_holy_light" android:background="@color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

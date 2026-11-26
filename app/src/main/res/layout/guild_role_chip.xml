@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<androidx.cardview.widget.CardView android:layout_width="wrap_content" android:layout_height="wrap_content" app:cardBackgroundColor="?colorBackgroundModifierAccent" app:cardCornerRadius="8.0dip" app:cardElevation="0.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?bg_pressed_highlight" android:padding="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@id/role_chip_dot" android:layout_width="12.0dip" android:layout_height="12.0dip" android:src="@drawable/drawable_circle_white_12dp" android:importantForAccessibility="no" android:layout_marginEnd="4.0dip" />
+        <com.discord.widgets.roles.RoleIconView android:id="@id/role_chip_icon" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_marginEnd="4.0dip" />
+        <TextView android:textAppearance="@style/UiKit.TextAppearance" android:textSize="12.0sp" android:textColor="?colorHeaderPrimary" android:id="@id/role_chip_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

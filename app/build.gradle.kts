@@ -90,6 +90,16 @@ android {
     buildTypes {
         debug {
             signingConfig = signingConfigs.getByName("manticord")
+            // Discord's recovered native libraries (libdiscord, libdsti, libkrisp_wrapper) exist
+            // only for arm64-v8a. Dependency AARs still ship x86/x86_64/armeabi-v7a, so an
+            // unfiltered debug APK is multi-ABI; a non-arm64 runtime then picks its own ABI and
+            // crashes the first time it loads one of the arm64-only libraries. Restrict the single
+            // debug APK to arm64-v8a so every runtime (arm64 device, or x86_64 with ARM translation)
+            // loads the complete, consistent native set.
+            ndk {
+                abiFilters.clear()
+                abiFilters.add("arm64-v8a")
+            }
         }
         release {
             lint {

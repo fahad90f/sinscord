@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:drawablePadding="16dp"
-    style="@style/UiKit.ListItem" />
+<TextView android:drawablePadding="16.0dip" style="@style/UiKit.ListItem"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

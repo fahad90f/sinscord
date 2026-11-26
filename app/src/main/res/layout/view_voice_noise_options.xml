@@ -20,9 +20,9 @@
         android:orientation="vertical"
         android:paddingVertical="4dp">
 
-        <include android:id="@+id/voice_noise_krisp" layout="@layout/view_voice_settings_radio_row" />
-        <include android:id="@+id/voice_noise_standard" layout="@layout/view_voice_settings_radio_row" />
-        <include android:id="@+id/voice_noise_none" layout="@layout/view_voice_settings_radio_row" />
+        <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/voice_noise_krisp" layout="@layout/view_voice_settings_radio_row" />
+        <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/voice_noise_standard" layout="@layout/view_voice_settings_radio_row" />
+        <include android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/voice_noise_none" layout="@layout/view_voice_settings_radio_row" />
     </LinearLayout>
 
     <LinearLayout

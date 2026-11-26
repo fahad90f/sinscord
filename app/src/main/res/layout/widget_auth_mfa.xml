@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<androidx.coordinatorlayout.widget.CoordinatorLayout style="@style/UiKit.ViewGroup.Page"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/widget_auth_header" />
+    <androidx.core.widget.NestedScrollView android:layout_height="fill_parent" style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="80.0dip" style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView android:textAppearance="@style/UiKit.TextAppearance.Bold" android:textSize="@dimen/uikit_textsize_xxlarge" android:textColor="?colorHeaderPrimary" android:gravity="center" android:id="@id/auth_mfa_title" android:layout_marginBottom="8.0dip" android:text="@string/mfa_v2_totp" style="@style/UiKit.TextView" />
+            <TextView android:textAppearance="@style/UiKit.TextAppearance" android:textColor="?colorHeaderSecondary" android:gravity="center" android:id="@id/auth_mfa_subtitle" android:visibility="gone" android:layout_marginBottom="16.0dip" android:maxWidth="320.0dip" style="@style/UiKit.TextView.Medium" />
+            <com.discord.views.CodeVerificationView android:id="@id/auth_mfa_verification" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <TextView android:textAppearance="@style/UiKit.TextAppearance" android:textColor="?colorTextDanger" android:gravity="center" android:id="@id/auth_mfa_error" android:visibility="gone" android:layout_marginTop="8.0dip" android:maxWidth="320.0dip" style="@style/UiKit.TextView.Medium" />
+            <com.google.android.material.button.MaterialButton android:id="@id/auth_mfa_resend" android:visibility="gone" android:layout_marginTop="16.0dip" android:text="@string/mfa_v2_sms_resend" style="@style/UiKit.Material.Button.Secondary.Fit" />
+            <TextView android:textColor="?colorTextLink" android:gravity="center" android:id="@id/auth_mfa_choose_method" android:background="?selectableItemBackground" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:layout_marginTop="16.0dip" android:maxWidth="320.0dip" android:text="@string/mfa_v2_go_to_select" android:paddingStart="16.0dip" android:paddingEnd="16.0dip" style="@style/UiKit.TextView.Medium" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.discord.utilities.dimmer.DimmerView android:id="@id/dimmer_view" style="@style/UiKit.DimmerView" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

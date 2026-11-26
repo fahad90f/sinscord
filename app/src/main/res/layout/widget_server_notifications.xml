@@ -1,4 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+<androidx.coordinatorlayout.widget.CoordinatorLayout style="@style/UiKit.ViewGroup.Page"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView style="@style/AppTheme.AppBarScrollingViewBehavior">
+        <LinearLayout android:paddingBottom="@dimen/list_bottom_padding" style="@style/UiKit.ViewGroup.LinearLayout">
+            <com.discord.widgets.servers.NotificationMuteSettingsView android:id="@id/server_notifications_mute_settings_view" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <View android:id="@id/server_notifications_frequency_divider" style="@style/UiKit.Settings.Divider" />
+            <LinearLayout android:id="@id/server_notifications_presets_wrap" style="@style/UiKit.ViewGroup.LinearLayout">
+                <TextView android:text="@string/notification_settings_presets" style="@style/UiKit.Settings.Item.Header" />
+                <com.discord.views.CheckedSetting android:id="@id/server_notifications_preset_all_radio" app:cs_text="@string/form_label_all_messages" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+                <com.discord.views.CheckedSetting android:id="@id/server_notifications_preset_mentions_radio" app:cs_text="@string/form_label_only_mentions_plain" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+                <com.discord.views.CheckedSetting android:id="@id/server_notifications_preset_nothing_radio" app:cs_text="@string/none" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+                <com.discord.views.CheckedSetting android:id="@id/server_notifications_preset_custom_radio" app:cs_text="@string/notification_settings_presets_custom" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/server_notifications_frequency_wrap" style="@style/UiKit.ViewGroup.LinearLayout">
+                <View style="@style/UiKit.Settings.Divider" />
+                <TextView android:text="@string/notifications" style="@style/UiKit.Settings.Item.Header" />
+                <com.discord.views.CheckedSetting android:id="@id/server_notifications_frequency_0_radio" app:cs_text="@string/form_label_all_messages" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+                <com.discord.views.CheckedSetting android:id="@id/server_notifications_frequency_1_radio" app:cs_text="@string/form_label_only_mentions" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+                <com.discord.views.CheckedSetting android:id="@id/server_notifications_frequency_2_radio" app:cs_text="@string/form_label_nothing" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/server_notifications_unread_wrap" style="@style/UiKit.ViewGroup.LinearLayout">
+                <View style="@style/UiKit.Settings.Divider" />
+                <TextView android:text="@string/notification_settings_presets_unread_title" style="@style/UiKit.Settings.Item.Header" />
+                <TextView android:text="@string/notification_settings_presets_unread_subtitle" style="@style/UiKit.Settings.Item.SubText" />
+                <com.discord.views.CheckedSetting android:id="@id/server_notifications_unread_all_radio" app:cs_text="@string/form_label_all_messages" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+                <com.discord.views.CheckedSetting android:id="@id/server_notifications_unread_mentions_radio" app:cs_text="@string/form_label_only_mentions_plain" app:cs_view_type="radio" style="@style/UiKit.CheckedSetting.Themed" />
+            </LinearLayout>
+            <View android:id="@id/server_notifications_roles_divider" style="@style/UiKit.Settings.Divider" />
+            <com.discord.widgets.servers.NotificationHighlightsSettingsView android:id="@id/server_notifications_highlights" android:visibility="gone" android:layout_marginBottom="8.0dip" style="@style/UiKit.ViewGroup.LinearLayout" />
+            <View android:id="@id/server_notifications_highlights_divider" android:visibility="gone" style="@style/UiKit.Settings.Divider" />
+            <com.discord.views.CheckedSetting android:id="@id/server_notifications_everyone_switch" app:cs_text="@string/form_label_suppress_everyone" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/server_notifications_roles_switch" app:cs_text="@string/form_label_suppress_roles" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/server_notifications_mute_events_switch" app:cs_text="@string/form_label_mute_scheduled_events" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <com.discord.views.CheckedSetting android:id="@id/server_notifications_push_switch" app:cs_text="@string/form_label_mobile_push_notifications" app:cs_view_type="switchview" style="@style/UiKit.CheckedSetting.Themed" />
+            <View android:id="@id/server_notifications_override_divider" style="@style/UiKit.Settings.Divider" />
+            <TextView android:id="@id/server_notifications_override_title" android:text="@string/notification_overrides" style="@style/UiKit.Settings.Item.Header" />
+            <include android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/add_override" layout="@layout/view_add_override_item" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/guild_notifications_override_list" style="@style/UiKit.ViewGroup.RecyclerView" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

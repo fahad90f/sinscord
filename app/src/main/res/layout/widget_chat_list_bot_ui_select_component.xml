@@ -1,15 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.discord.widgets.botuikit.views.select.SelectComponentView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="8dp">
+    android:background="@drawable/drawable_rect_rounded_bg_secondary"
+    android:minHeight="40dp"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
 
-    <TextView
-        android:id="@+id/bot_ui_select_placeholder"
-        android:layout_width="match_parent"
+    <com.discord.views.VitoImageView
+        android:id="@+id/select_component_selection_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/select_component_selection_text"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="?attr/colorTextMuted"
-        android:textSize="14sp" />
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="?attr/colorInteractiveNormal"
+        style="@style/UiKit.TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/select_component_chevron"
+        app:layout_constraintStart_toEndOf="@+id/select_component_selection_icon"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/select_component_selections_root"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:flexWrap="wrap"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/select_component_chevron"
+        app:layout_constraintStart_toEndOf="@+id/select_component_selection_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/select_component_chevron"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_chevron_down_white_12dp"
+        android:contentDescription="@null"
+        app:tint="?attr/colorInteractiveNormal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.discord.views.typing.TypingDots
+        android:id="@+id/select_component_loading"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</com.discord.widgets.botuikit.views.select.SelectComponentView>

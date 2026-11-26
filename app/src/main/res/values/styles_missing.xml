@@ -1,189 +1,1047 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="App.TabLayout.Text" parent="" />
-    <style name="AppTheme.AppBarLayout" parent="Widget.MaterialComponents.AppBarLayout.Surface" />
-    <style name="AppTheme.AppBarLayout.Flat" parent="Widget.MaterialComponents.AppBarLayout.Surface" />
-    <style name="AppTheme.AppBarScrollingViewBehavior" parent="" />
-    <style name="AppTheme.Toolbar" parent="Widget.AppCompat.Toolbar" />
-    <style name="Avatar.Large" parent="" />
-    <style name="Avatar.Standard" parent="" />
-    <style name="ChannelSettings.Caption" parent="" />
-    <style name="ChannelSettings.Card" parent="" />
-    <style name="ChannelSettings.Input" parent="" />
-    <style name="ChannelSettings.Input.EditText" parent="Widget.AppCompat.EditText" />
-    <style name="ChannelSettings.Label" parent="" />
-    <style name="ChannelSettings.Option" parent="" />
-    <style name="ChannelSettings.Option.Label" parent="" />
-    <style name="ChannelSettings.Option.Radio" parent="" />
-    <style name="Code.TextAppearance" parent="" />
-    <style name="DialogDatePicker" parent="" />
-    <style name="ExoPlayerView.SurfaceType" parent="" />
-    <style name="FlexInput.Items.Photo" parent="" />
-    <style name="FlexInput.Items.Photo.Selection" parent="" />
-    <style name="MessageMenu.Row" parent="" />
-    <style name="MessageMenu.Row.Danger" parent="" />
-    <style name="SegmentedControlTabCard" parent="" />
-    <style name="Settings.FloatingActionButton" parent="" />
-    <style name="Settings.FloatingActionButton.Save" parent="" />
-    <style name="TabsHostBottomNavIcon" parent="" />
-    <style name="ThreadBrowser.VerticalCenter" parent="" />
-    <style name="UiKit.Chat.Embed.CardView" parent="Widget.MaterialComponents.CardView" />
-    <style name="UiKit.Chat.Guideline" parent="" />
-    <style name="UiKit.Chat.Text" parent="" />
-    <style name="UiKit.CheckedSetting.Themed" parent="" />
-    <style name="UiKit.Copy" parent="" />
-    <style name="UiKit.Copy.Anchor" parent="" />
-    <style name="UiKit.Copy.Anchor.Item.Rotatable" parent="" />
-    <style name="UiKit.Copy.Container" parent="" />
-    <style name="UiKit.Dialog.ButtonContainer" parent="" />
-    <style name="UiKit.Dialog.Container" parent="" />
-    <style name="UiKit.Dialog.Title" parent="" />
-    <style name="UiKit.DimmerView" parent="" />
-    <style name="UiKit.Divider" parent="" />
+    <style name="App.TabLayout.Text">
+        <item name="android:textSize">@dimen/uikit_textsize_medium</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">?font_primary_semibold</item>
+    </style>
+    <style name="AppTheme.AppBarLayout" parent="@style/AppTheme">
+        <item name="android:id">@id/action_bar_toolbar_layout</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="liftOnScroll">true</item>
+    </style>
+    <style name="AppTheme.AppBarLayout.Flat" parent="@style/AppTheme.AppBarLayout">
+        <item name="elevation">0.0dip</item>
+        <item name="liftOnScroll">false</item>
+    </style>
+    <style name="AppTheme.AppBarScrollingViewBehavior" parent="@style/AppTheme">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="layout_behavior">@string/appbar_scrolling_view_behavior</item>
+    </style>
+    <style name="AppTheme.Toolbar" parent="@style/AppTheme">
+        <item name="android:theme">@style/AppTheme.ToolbarTheme</item>
+        <item name="android:id">@id/action_bar_toolbar</item>
+        <item name="android:background">?toolbarColor</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">?actionBarSize</item>
+        <item name="android:minHeight">?actionBarSize</item>
+        <item name="layout_collapseMode">pin</item>
+        <item name="popupTheme">@style/AppTheme.Toolbar.Popup</item>
+        <item name="subtitleTextAppearance">@style/UiKit.TextAppearance.Toolbar.Subtitle</item>
+        <item name="titleTextAppearance">@style/UiKit.TextAppearance.Toolbar.Title</item>
+    </style>
+    <style name="Avatar.Large" parent="@style/Avatar">
+        <item name="android:layout_width">@dimen/avatar_size_large</item>
+        <item name="android:layout_height">@dimen/avatar_size_large</item>
+        <item name="placeholderImage">?asset_default_avatar_64dp</item>
+    </style>
+    <style name="Avatar.Standard" parent="@style/Avatar">
+        <item name="android:layout_width">@dimen/avatar_size_standard</item>
+        <item name="android:layout_height">@dimen/avatar_size_standard</item>
+        <item name="placeholderImage">?asset_default_avatar_32dp</item>
+    </style>
+    <style name="ChannelSettings.Caption" parent="@style/UiKit.TextView">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">?colorHeaderSecondary</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8.0dip</item>
+    </style>
+    <style name="ChannelSettings.Card">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16.0dip</item>
+    </style>
+    <style name="ChannelSettings.Input" parent="@style/UiKit.TextInputLayout.Primary">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxBackgroundMode">none</item>
+        <item name="hintEnabled">false</item>
+    </style>
+    <style name="ChannelSettings.Input.EditText" parent="@style/ChannelSettings.Input">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">?colorHeaderPrimary</item>
+        <item name="android:background">@drawable/channel_settings_input_bg</item>
+        <item name="android:padding">14.0dip</item>
+    </style>
+    <style name="ChannelSettings.Label" parent="@style/UiKit.TextView">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">?colorHeaderSecondary</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16.0dip</item>
+        <item name="android:layout_marginBottom">8.0dip</item>
+        <item name="android:fontFamily">?font_primary_semibold</item>
+    </style>
+    <style name="ChannelSettings.Option">
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">52.0dip</item>
+    </style>
+    <style name="ChannelSettings.Option.Label" parent="@style/UiKit.TextView">
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:textColor">?colorHeaderPrimary</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">16.0dip</item>
+        <item name="android:paddingEnd">64.0dip</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+    </style>
+    <style name="ChannelSettings.Option.Radio">
+        <item name="android:clickable">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">10.0dip</item>
+        <item name="android:buttonTint">?colorCompoundButton</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+    </style>
+    <style name="Code.TextAppearance">
+        <item name="android:typeface">monospace</item>
+        <item name="android:textColor">?colorHeaderSecondary</item>
+        <item name="android:fontFamily">?font_monospace</item>
+    </style>
+    <style name="DialogDatePicker" parent="@style/AppTheme">
+        <item name="android:textColorPrimary">?colorHeaderPrimary</item>
+    </style>
+    <style name="ExoPlayerView.SurfaceType" parent="@style/ExoPlayerView">
+        <item name="surface_type">texture_view</item>
+    </style>
+    <style name="FlexInput.Items.Photo" parent="@style/FlexInput.Items.Base.Photo" />
+    <style name="FlexInput.Items.Photo.Selection" parent="@style/FlexInput.Items.Base.Photo.Selection">
+        <item name="roundWithOverlayColor">@android:color/transparent</item>
+    </style>
+    <style name="MessageMenu.Row" parent="@style/UiKit.Settings.Item.Icon">
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:paddingTop">12.0dip</item>
+        <item name="android:paddingBottom">12.0dip</item>
+        <item name="android:minHeight">52.0dip</item>
+        <item name="android:drawablePadding">16.0dip</item>
+    </style>
+    <style name="MessageMenu.Row.Danger" parent="@style/MessageMenu.Row">
+        <item name="android:textColor">@color/status_red</item>
+    </style>
+    <style name="SegmentedControlTabCard">
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="cardBackgroundColor">@color/transparent</item>
+        <item name="cardCornerRadius">4.0dip</item>
+        <item name="cardElevation">0.0dip</item>
+        <item name="strokeWidth">0.0dip</item>
+    </style>
+    <style name="Settings.FloatingActionButton">
+        <item name="android:layout_gravity">end|bottom|center</item>
+        <item name="android:paddingLeft">@dimen/settings_option_padding</item>
+        <item name="android:paddingRight">@dimen/settings_option_padding</item>
+        <item name="android:paddingBottom">@dimen/settings_option_padding</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">16.0dip</item>
+        <item name="backgroundTint">?color_brand</item>
+        <item name="colorAccent">?color_brand</item>
+        <item name="colorControlHighlight">?color_brand_260</item>
+        <item name="elevation">@dimen/app_elevation</item>
+        <item name="fabSize">normal</item>
+        <item name="tint">@color/white</item>
+    </style>
+    <style name="Settings.FloatingActionButton.Save" parent="@style/Settings.FloatingActionButton">
+        <item name="android:visibility">gone</item>
+        <item name="android:src">@drawable/icon_save</item>
+    </style>
+    <style name="TabsHostBottomNavIcon" parent="@style/UiKit.ImageView">
+        <item name="android:layout_gravity">center</item>
+        <item name="tint">?colorInteractiveNormal</item>
+    </style>
+    <style name="ThreadBrowser.VerticalCenter">
+        <item name="android:layout_marginBottom">128.0dip</item>
+    </style>
+    <style name="UiKit.Chat.Embed.CardView" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardBackgroundColor">?colorBackgroundSecondary</item>
+        <item name="cardCornerRadius">8.0dip</item>
+        <item name="cardElevation">0.0dip</item>
+        <item name="rippleColor">?primary_400_alpha_30</item>
+        <item name="strokeColor">?primary_700_alpha_60</item>
+        <item name="strokeWidth">@dimen/chat_embed_card_stroke_width</item>
+    </style>
+    <style name="UiKit.Chat.Guideline" parent="@style/UiKit.Guideline">
+        <item name="android:id">@id/uikit_chat_guideline</item>
+        <item name="layout_constraintGuide_begin">@dimen/uikit_guideline_chat</item>
+    </style>
+    <style name="UiKit.Chat.Text" parent="@style/UiKit.TextView">
+        <item name="android:textSize">13.75sp</item>
+        <item name="android:textColor">?colorTextNormal</item>
+        <item name="android:minHeight">19.0dip</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+    <style name="UiKit.CheckedSetting.Themed" parent="@style/UiKit.CheckedSetting">
+        <item name="cs_subtext_color">?primary_300</item>
+        <item name="cs_subtext_size">@dimen/uikit_textsize_medium</item>
+        <item name="cs_text_color">?primary_100</item>
+        <item name="cs_text_size">@dimen/uikit_textsize_large</item>
+    </style>
+    <style name="UiKit.Copy" parent="@style/UiKit.ViewGroup.LinearLayout">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">20.0dip</item>
+    </style>
+    <style name="UiKit.Copy.Anchor" parent="@style/UiKit.Copy.Anchor.Base" />
+    <style name="UiKit.Copy.Anchor.Item.Rotatable" parent="@style/UiKit.ViewGroup" />
+    <style name="UiKit.Copy.Container" parent="@style/UiKit.ViewGroup.LinearLayout.Rotatable">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="UiKit.Dialog.ButtonContainer" parent="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+        <item name="android:gravity">end</item>
+        <item name="android:background">?primary_630</item>
+        <item name="android:paddingLeft">8.0dip</item>
+        <item name="android:paddingTop">8.0dip</item>
+        <item name="android:paddingRight">8.0dip</item>
+        <item name="android:paddingBottom">8.0dip</item>
+    </style>
+    <style name="UiKit.Dialog.Container" parent="@style/UiKit.ViewGroup.LinearLayout">
+        <item name="android:background">?colorBackgroundPrimary</item>
+    </style>
+    <style name="UiKit.Dialog.Title" parent="@style/UiKit.TextView.Bold">
+        <item name="android:textSize">@dimen/uikit_textsize_xlarge</item>
+        <item name="android:textColor">?primary_100</item>
+        <item name="android:paddingLeft">@dimen/dialog_padding_horiz</item>
+        <item name="android:paddingRight">@dimen/dialog_padding_horiz</item>
+        <item name="android:paddingBottom">8.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_marginTop">@dimen/dialog_title_padding_top</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="UiKit.DimmerView" parent="@style/UiKit.ViewGroup">
+        <item name="android:gravity">center</item>
+        <item name="android:id">@id/dimmer_view</item>
+        <item name="android:background">@color/black_alpha_80</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:alpha">0.0</item>
+    </style>
+    <style name="UiKit.Divider">
+        <item name="android:background">?colorPrimaryDivider</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.25dip</item>
+    </style>
     <style name="UiKit.EditText" parent="Widget.AppCompat.EditText" />
     <style name="UiKit.EditText.Chat" parent="Widget.AppCompat.EditText" />
     <style name="UiKit.EditText.NoteInput" parent="Widget.AppCompat.EditText" />
     <style name="UiKit.EditText.NoteInput.Normal" parent="Widget.AppCompat.EditText" />
     <style name="UiKit.EditText.NoteInput.Stickied" parent="Widget.AppCompat.EditText" />
     <style name="UiKit.EditText.SingleLine" parent="Widget.AppCompat.EditText" />
-    <style name="UiKit.GuildIcon" parent="" />
-    <style name="UiKit.Image" parent="" />
-    <style name="UiKit.Image.Circle" parent="" />
-    <style name="UiKit.Image.Circle.Badge" parent="" />
-    <style name="UiKit.Image.Circle.Bordered" parent="" />
-    <style name="UiKit.Image.Circle.Online" parent="" />
-    <style name="UiKit.Image.Circle.Online.Large" parent="" />
-    <style name="UiKit.Image.Circle.Online.StatusBadge" parent="" />
-    <style name="UiKit.Image.Circle.StatusBadge" parent="" />
-    <style name="UiKit.Image.Square" parent="" />
-    <style name="UiKit.Image.Square.Badge" parent="" />
-    <style name="UiKit.MarkupText" parent="" />
-    <style name="UiKit.MarkupText.Mention" parent="" />
-    <style name="UiKit.MarkupText.SingleLine" parent="" />
-    <style name="UiKit.MentionText" parent="" />
+    <style name="UiKit.GuildIcon" />
+    <style name="UiKit.Image" />
+    <style name="UiKit.Image.Circle" />
+    <style name="UiKit.Image.Circle.Badge" />
+    <style name="UiKit.Image.Circle.Bordered" />
+    <style name="UiKit.Image.Circle.Online" />
+    <style name="UiKit.Image.Circle.Online.Large" />
+    <style name="UiKit.Image.Circle.Online.StatusBadge" />
+    <style name="UiKit.Image.Circle.StatusBadge" />
+    <style name="UiKit.Image.Square" />
+    <style name="UiKit.Image.Square.Badge" />
+    <style name="UiKit.MarkupText" />
+    <style name="UiKit.MarkupText.Mention" />
+    <style name="UiKit.MarkupText.SingleLine" />
+    <style name="UiKit.MentionText" />
     <style name="UiKit.ProgressBar" parent="Widget.AppCompat.ProgressBar" />
     <style name="UiKit.ProgressBar.Horizontal" parent="Widget.AppCompat.ProgressBar" />
     <style name="UiKit.ProgressBar.Horizontal.Thin" parent="Widget.AppCompat.ProgressBar" />
-    <style name="UiKit.SearchBar" parent="" />
-    <style name="UiKit.ShimmerView" parent="" />
-    <style name="UiKit.Stage.SectionHeader" parent="" />
+    <style name="UiKit.SearchBar" />
+    <style name="UiKit.ShimmerView" />
+    <style name="UiKit.Stage.SectionHeader" parent="@style/UiKit.TextView.Medium">
+        <item name="android:textAppearance">@style/Stage.Section.HeaderTextAppearance</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_marginBottom">8.0dip</item>
+    </style>
     <style name="UiKit.SwitchCompat" parent="Widget.AppCompat.CompoundButton.Switch" />
-    <style name="UiKit.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
-    <style name="UiKit.TextInputLayout.Search" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
-    <style name="UiKit.TextInputLayout.Search.ActionBar" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
-    <style name="UiKit.TextView" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.Bold" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.H1" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.H1.Bold" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.H2" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.H2.Bold" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.H3" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.H6" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.Large" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.Large.SingleLine" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.Link" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.Medium" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.NoResults" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.Semibold" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.SingleLine" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.Subtext" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.TextView.Subtext.SingleLine" parent="Widget.AppCompat.TextView" />
-    <style name="UiKit.ViewGroup" parent="" />
-    <style name="UiKit.ViewGroup.AppViewFlipper.InCoordinatorLayout" parent="" />
-    <style name="UiKit.ViewGroup.ConstraintLayout" parent="" />
-    <style name="UiKit.ViewGroup.CoordinatorLayout.Page" parent="" />
-    <style name="UiKit.ViewGroup.LinearLayout" parent="" />
-    <style name="UiKit.ViewGroup.LinearLayout.Horizontal" parent="" />
-    <style name="UiKit.ViewGroup.NestedScrollView" parent="" />
-    <style name="UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior" parent="" />
-    <style name="UiKit.ViewGroup.Page" parent="" />
-    <style name="UiKit.ViewGroup.Page.LinearLayout" parent="" />
-    <style name="UiKit.ViewGroup.RecyclerView" parent="" />
-    <style name="UiKit.ViewGroup.RecyclerView.Horizontal" parent="" />
-    <style name="UiKit.ViewGroup.RelativeLayout" parent="" />
-    <style name="UiKit.ViewGroup.ScrollView" parent="" />
-    <style name="UiKit.ViewGroup.ScrollView.Page" parent="" />
-    <style name="UserProfile.PresenceSection.Body.Subtext" parent="" />
-    <style name="UserProfile.Section.Card" parent="" />
-    <style name="UserProfile.Section.Header" parent="" />
+    <style name="UiKit.TextInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:textColorHint">?colorTextMuted</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxBackgroundColor">?colorInputBackground</item>
+        <item name="boxCornerRadiusBottomEnd">4.0dip</item>
+        <item name="boxCornerRadiusBottomStart">4.0dip</item>
+        <item name="boxCornerRadiusTopEnd">4.0dip</item>
+        <item name="boxCornerRadiusTopStart">4.0dip</item>
+        <item name="boxStrokeWidth">0.0dip</item>
+        <item name="boxStrokeWidthFocused">0.0dip</item>
+        <item name="counterOverflowTextColor">?colorTextDanger</item>
+        <item name="counterTextColor">?colorTextMuted</item>
+        <item name="errorTextAppearance">@style/UiKit.TextAppearance</item>
+        <item name="hintTextAppearance">@style/UiKit.TextAppearance.MaterialEditText.Label</item>
+        <item name="hintTextColor">?colorHeaderSecondary</item>
+        <item name="materialThemeOverlay">@style/UiKit.MaterialThemeOverlay.TextInputLayout</item>
+    </style>
+    <style name="UiKit.TextInputLayout.Search" parent="@style/UiKit.TextInputLayout">
+        <item name="android:textColorHint">?colorHeaderSecondary</item>
+        <item name="android:layout_margin">8.0dip</item>
+        <item name="hintEnabled">false</item>
+        <item name="startIconDrawable">@drawable/ic_search_grey_24dp</item>
+    </style>
+    <style name="UiKit.TextInputLayout.Search.ActionBar" parent="@style/UiKit.TextInputLayout.Search">
+        <item name="endIconMode">clear_text</item>
+        <item name="startIconCheckable">false</item>
+        <item name="startIconContentDescription">@string/back</item>
+        <item name="startIconDrawable">@drawable/ic_arrow_back_white_24dp</item>
+        <item name="startIconTint">?colorInteractiveNormal</item>
+    </style>
+    <style name="UiKit.TextView">
+        <item name="android:textAppearance">@style/UiKit.TextAppearance</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:lineSpacingMultiplier">1.0</item>
+    </style>
+    <style name="UiKit.TextView.Bold" parent="@style/UiKit.TextView">
+        <item name="android:textAppearance">@style/UiKit.TextAppearance.Bold</item>
+    </style>
+    <style name="UiKit.TextView.H1" parent="@style/UiKit.TextView.Semibold">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textColor">?colorHeaderPrimary</item>
+        <item name="android:fontFamily">?font_display_semibold</item>
+    </style>
+    <style name="UiKit.TextView.H1.Bold" parent="@style/UiKit.TextView.H1">
+        <item name="android:fontFamily">?font_display_bold</item>
+    </style>
+    <style name="UiKit.TextView.H2" parent="@style/UiKit.TextView.Semibold">
+        <item name="android:textSize">@dimen/uikit_textsize_large</item>
+        <item name="android:textColor">?primary_200</item>
+        <item name="android:fontFamily">?font_display_semibold</item>
+    </style>
+    <style name="UiKit.TextView.H2.Bold" parent="@style/UiKit.TextView.H2">
+        <item name="android:fontFamily">?font_display_bold</item>
+    </style>
+    <style name="UiKit.TextView.H3" parent="@style/UiKit.TextView.Semibold">
+        <item name="android:textSize">@dimen/uikit_textsize_medium</item>
+        <item name="android:textColor">?colorHeaderPrimary</item>
+        <item name="android:fontFamily">?font_display_semibold</item>
+    </style>
+    <style name="UiKit.TextView.H6" parent="@style/UiKit.TextView">
+        <item name="android:textSize">@dimen/uikit_textsize_small</item>
+        <item name="android:textColor">?colorHeaderSecondary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">?font_display_bold</item>
+    </style>
+    <style name="UiKit.TextView.Large" parent="@style/UiKit.TextView">
+        <item name="android:textSize">@dimen/uikit_textsize_large</item>
+    </style>
+    <style name="UiKit.TextView.Large.SingleLine" parent="@style/UiKit.TextView.Large">
+        <item name="android:textColor">?primary_100</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="UiKit.TextView.Link" parent="@style/UiKit.TextView">
+        <item name="android:textColor">?colorTextLink</item>
+    </style>
+    <style name="UiKit.TextView.Medium" parent="@style/UiKit.TextView">
+        <item name="android:textSize">@dimen/uikit_textsize_medium</item>
+    </style>
+    <style name="UiKit.TextView.NoResults" parent="@style/UiKit.TextView.Semibold">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">16.0dip</item>
+        <item name="android:text">@string/search_no_results</item>
+        <item name="android:drawablePadding">16.0dip</item>
+        <item name="drawableTopCompat">?img_empty_search</item>
+    </style>
+    <style name="UiKit.TextView.Semibold" parent="@style/UiKit.TextView">
+        <item name="android:textAppearance">@style/UiKit.TextAppearance.Semibold</item>
+    </style>
+    <style name="UiKit.TextView.SingleLine" parent="@style/UiKit.TextView">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="UiKit.TextView.Subtext" parent="@style/UiKit.TextView">
+        <item name="android:textSize">@dimen/uikit_textsize_small</item>
+        <item name="android:textColor">?colorTextMuted</item>
+    </style>
+    <style name="UiKit.TextView.Subtext.SingleLine" parent="@style/UiKit.TextView.Subtext">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="UiKit.ViewGroup" parent="@style/UiKit">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="UiKit.ViewGroup.AppViewFlipper.InCoordinatorLayout" parent="@style/UiKit.ViewGroup">
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="layout_behavior">@string/appbar_scrolling_view_behavior</item>
+    </style>
+    <style name="UiKit.ViewGroup.ConstraintLayout" parent="@style/UiKit.ViewGroup" />
+    <style name="UiKit.ViewGroup.CoordinatorLayout.Page" parent="@style/UiKit.ViewGroup.CoordinatorLayout">
+        <item name="android:background">?colorBackgroundPrimary</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="UiKit.ViewGroup.LinearLayout" parent="@style/UiKit.ViewGroup">
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="UiKit.ViewGroup.LinearLayout.Horizontal" parent="@style/UiKit.ViewGroup.LinearLayout">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="UiKit.ViewGroup.NestedScrollView" parent="@style/UiKit.ViewGroup">
+        <item name="android:clipToPadding">false</item>
+        <item name="android:fillViewport">true</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+    <style name="UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior" parent="@style/UiKit.ViewGroup.NestedScrollView">
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="layout_behavior">@string/action_bar_scrolling_view_behavior</item>
+    </style>
+    <style name="UiKit.ViewGroup.Page" parent="@style/UiKit.ViewGroup">
+        <item name="android:background">?colorBackgroundPrimary</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="UiKit.ViewGroup.Page.LinearLayout" parent="@style/UiKit.ViewGroup.Page">
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="UiKit.ViewGroup.RecyclerView" parent="@style/UiKit.ViewGroup">
+        <item name="android:orientation">vertical</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+    <style name="UiKit.ViewGroup.RecyclerView.Horizontal" parent="@style/UiKit.ViewGroup.RecyclerView">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:fitsSystemWindows">false</item>
+    </style>
+    <style name="UiKit.ViewGroup.RelativeLayout" parent="@style/UiKit.ViewGroup" />
+    <style name="UiKit.ViewGroup.ScrollView" parent="@style/UiKit.ViewGroup" />
+    <style name="UiKit.ViewGroup.ScrollView.Page" parent="@style/UiKit.ViewGroup.ScrollView">
+        <item name="android:background">?colorBackgroundPrimary</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="UserProfile.PresenceSection.Body.Subtext" parent="@style/UiKit.TextView.Subtext">
+        <item name="android:textColor">?colorHeaderSecondary</item>
+    </style>
+    <style name="UserProfile.Section.Card" parent="@style/UserProfile.Section">
+        <item name="android:layout_marginBottom">8.0dip</item>
+        <item name="cardBackgroundColor">?colorBackgroundPrimary</item>
+        <item name="cardCornerRadius">8.0dip</item>
+        <item name="cardElevation">0.0dip</item>
+    </style>
+    <style name="UserProfile.Section.Header" parent="@style/UserProfile.Section">
+        <item name="android:textAppearance">@style/UserProfile.Section.HeaderTextAppearance</item>
+        <item name="android:paddingTop">8.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_marginTop">8.0dip</item>
+        <item name="android:layout_marginBottom">8.0dip</item>
+    </style>
     <!-- Library styles already defined in AppCompat/Material AARs — do not redeclare -->
-    <style name="cpv_ColorPickerViewStyle" parent="" />
-    <style name="UiKit.GuildsListIcon" parent="" />
-    <style name="UiKit.GuildsListItem" parent="" />
-    <style name="UiKit.ImageView" parent="" />
-    <style name="UiKit.ListItem" parent="" />
-    <style name="UiKit.Material.Button" parent="" />
-    <style name="UiKit.Material.Button.Fit" parent="" />
-    <style name="UiKit.Material.Button.Green.Fit" parent="" />
-    <style name="UiKit.Material.Button.Outline" parent="" />
-    <style name="UiKit.Material.Button.Red" parent="" />
-    <style name="UiKit.Material.Button.Red.Fit" parent="" />
-    <style name="UiKit.Material.Button.Secondary" parent="" />
-    <style name="UiKit.Material.Button.Secondary.Fit" parent="" />
-    <style name="UiKit.Material.Button.Tertiary" parent="" />
-    <style name="UiKit.Material.Button.Transparent.Fit" parent="" />
-    <style name="UiKit.ProgressBar.White" parent="" />
-    <style name="UiKit.SearchInput" parent="" />
-    <style name="UiKit.SearchInputClear" parent="" />
-    <style name="UiKit.SeekBar" parent="" />
-    <style name="UiKit.Settings.Divider" parent="" />
-    <style name="UiKit.Settings.Item" parent="" />
-    <style name="UiKit.Settings.Item.Addition" parent="" />
-    <style name="UiKit.Settings.Item.Chevron" parent="" />
-    <style name="UiKit.Settings.Item.Header" parent="" />
-    <style name="UiKit.Settings.Item.Icon" parent="" />
-    <style name="UiKit.Settings.Item.Label" parent="" />
-    <style name="UiKit.Settings.Item.SubText" parent="" />
-    <style name="UiKit.Settings.Item.SubText.Attached" parent="" />
-    <style name="UiKit.Sheet.Header.Title" parent="" />
-    <style name="UiKit.TextAppearance" parent="" />
-    <style name="UiKit.TextAppearance.Bold" parent="" />
-    <style name="UiKit.TextAppearance.Semibold" parent="" />
-    <style name="UiKit.TextInputLayout.EditText" parent="" />
-    <style name="UiKit.TextInputLayout.EditText.MultiLine" parent="" />
-    <style name="UiKit.TextInputLayout.EditText.SingleLine" parent="" />
-    <style name="UiKit.TextInputLayout.EditText.SingleLine.Password" parent="" />
-    <style name="UiKit.TextInputLayout.EditText.SingleLine.Search" parent="" />
-    <style name="UiKit.TextInputLayout.Primary" parent="" />
-    <style name="UiKit.TextInputLayout.Primary.Password" parent="" />
+    <style name="cpv_ColorPickerViewStyle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">315.0dip</item>
+    </style>
+    <style name="UiKit.GuildsListIcon" parent="@style/Avatar.Large">
+        <item name="android:layout_centerInParent">true</item>
+        <item name="overlayImage">@null</item>
+    </style>
+    <style name="UiKit.GuildsListItem" parent="@style/UiKit.ViewGroup.RelativeLayout">
+        <item name="android:clipChildren">false</item>
+        <item name="android:layout_width">@dimen/guild_list_size</item>
+        <item name="android:layout_height">@dimen/guild_item_size</item>
+    </style>
+    <style name="UiKit.ImageView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:contentDescription">@null</item>
+    </style>
+    <style name="UiKit.ListItem" parent="@style/UiKit">
+        <item name="android:textAppearance">@style/UiKit.TextAppearance.ListItem</item>
+        <item name="android:textColor">?colorInteractiveActive</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/bg_pressed_highlight_darken</item>
+        <item name="android:paddingTop">16.0dip</item>
+        <item name="android:paddingBottom">16.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">16.0dip</item>
+        <item name="android:paddingEnd">16.0dip</item>
+    </style>
+    <style name="UiKit.Material.Button" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:textAppearance">@style/UiKit.TextAppearance.Button</item>
+        <item name="android:textColor">@color/uikit_btn_text_color_selector</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:stateListAnimator">@animator/uikit_button_scale</item>
+        <item name="backgroundTint">@color/uikit_btn_bg_color_selector_brand</item>
+    </style>
+    <style name="UiKit.Material.Button.Fit" parent="@style/UiKit.Material.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">@dimen/uikit_btn_wrapped_min_width</item>
+    </style>
+    <style name="UiKit.Material.Button.Green.Fit" parent="@style/UiKit.Material.Button.Green">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">@dimen/uikit_btn_wrapped_min_width</item>
+    </style>
+    <style name="UiKit.Material.Button.Outline" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAppearance">@style/UiKit.TextAppearance.Button</item>
+        <item name="android:textColor">@color/uikit_btn_outline_color_selector_brand</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:stateListAnimator">@animator/uikit_button_scale</item>
+        <item name="strokeColor">@color/uikit_btn_outline_color_selector_brand</item>
+    </style>
+    <style name="UiKit.Material.Button.Red" parent="@style/UiKit.Material.Button">
+        <item name="android:textColor">@color/primary_100</item>
+        <item name="backgroundTint">@color/uikit_btn_bg_color_selector_red</item>
+    </style>
+    <style name="UiKit.Material.Button.Red.Fit" parent="@style/UiKit.Material.Button.Red">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">@dimen/uikit_btn_wrapped_min_width</item>
+    </style>
+    <style name="UiKit.Material.Button.Secondary" parent="@style/UiKit.Material.Button">
+        <item name="backgroundTint">?colorButtonSecondary</item>
+    </style>
+    <style name="UiKit.Material.Button.Secondary.Fit" parent="@style/UiKit.Material.Button.Secondary">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">@dimen/uikit_btn_wrapped_min_width</item>
+    </style>
+    <style name="UiKit.Material.Button.Tertiary" parent="@style/UiKit.Material.Button">
+        <item name="backgroundTint">?colorBackgroundTertiary</item>
+    </style>
+    <style name="UiKit.Material.Button.Transparent.Fit" parent="@style/UiKit.Material.Button.Transparent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">@dimen/uikit_btn_wrapped_min_width</item>
+    </style>
+    <style name="UiKit.ProgressBar.White" parent="@style/Theme.AppCompat">
+        <item name="colorAccent">@color/white</item>
+    </style>
+    <style name="UiKit.SearchInput" parent="@style/UiKit">
+        <item name="android:textAppearance">@style/UiKit.TextAppearance</item>
+        <item name="android:textSize">@dimen/uikit_textsize_large</item>
+        <item name="android:textColor">?colorInteractiveActive</item>
+        <item name="android:textColorHint">?colorTextMuted</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:paddingTop">8.0dip</item>
+        <item name="android:paddingBottom">8.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingStart">8.0dip</item>
+    </style>
+    <style name="UiKit.SearchInputClear" parent="@style/UiKit">
+        <item name="android:padding">8.0dip</item>
+        <item name="android:layout_width">32.0dip</item>
+        <item name="android:layout_height">32.0dip</item>
+    </style>
+    <style name="UiKit.SeekBar">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxHeight">8.0dip</item>
+        <item name="android:progress">50</item>
+        <item name="android:progressDrawable">@drawable/drawable_settings_progress</item>
+        <item name="android:thumb">?img_thumb</item>
+        <item name="android:splitTrack">false</item>
+    </style>
+    <style name="UiKit.Settings.Divider" parent="@style/UiKit.Divider">
+        <item name="android:layout_marginTop">8.0dip</item>
+    </style>
+    <style name="UiKit.Settings.Item" parent="@style/UiKit.Settings.Base.Item">
+        <item name="android:paddingTop">16.0dip</item>
+        <item name="android:paddingBottom">16.0dip</item>
+        <item name="android:paddingStart">16.0dip</item>
+        <item name="android:paddingEnd">16.0dip</item>
+    </style>
+    <style name="UiKit.Settings.Item.Addition" parent="@style/UiKit.Settings.Item">
+        <item name="android:textSize">@dimen/uikit_textsize_medium</item>
+        <item name="android:textColor">?primary_300</item>
+        <item name="android:paddingTop">0.0dip</item>
+        <item name="android:fontFamily">?font_primary_normal</item>
+    </style>
+    <style name="UiKit.Settings.Item.Chevron" parent="@style/UiKit.Settings.Item">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">16.0dip</item>
+    </style>
+    <style name="UiKit.Settings.Item.Header" parent="@style/UiKit.Settings.Item">
+        <item name="android:textSize">@dimen/uikit_textsize_medium</item>
+        <item name="android:textColor">?colorHeaderSecondary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">?font_display_semibold</item>
+    </style>
+    <style name="UiKit.Settings.Item.Icon" parent="@style/UiKit.Settings.Item">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">32.0dip</item>
+    </style>
+    <style name="UiKit.Settings.Item.Label" parent="@style/UiKit.Settings.Item">
+        <item name="android:paddingBottom">0.0dip</item>
+    </style>
+    <style name="UiKit.Settings.Item.SubText" parent="@style/UiKit.Settings.Item">
+        <item name="android:textSize">@dimen/uikit_textsize_medium</item>
+        <item name="android:textColor">?primary_300</item>
+        <item name="android:fontFamily">?font_primary_normal</item>
+    </style>
+    <style name="UiKit.Settings.Item.SubText.Attached" parent="@style/UiKit.Settings.Item.SubText">
+        <item name="android:paddingTop">0.0dip</item>
+        <item name="android:paddingBottom">8.0dip</item>
+    </style>
+    <style name="UiKit.Sheet.Header.Title" parent="@style/UiKit.TextView.H1.Bold">
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_marginRight">8.0dip</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginEnd">8.0dip</item>
+        <item name="layout_constrainedWidth">true</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintHorizontal_bias">0.0</item>
+        <item name="layout_constraintLeft_toRightOf">@id/uikit_sheet_header_guideline</item>
+        <item name="layout_constraintRight_toRightOf">parent</item>
+        <item name="layout_constraintStart_toEndOf">@id/uikit_sheet_header_guideline</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+    </style>
+    <style name="UiKit.TextAppearance" parent="@style/TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/uikit_textsize_medium</item>
+        <item name="android:textColor">?colorTextNormal</item>
+        <item name="android:textColorLink">?colorTextLink</item>
+        <item name="android:fontFamily">?font_primary_normal</item>
+        <item name="android:textDirection">locale</item>
+    </style>
+    <style name="UiKit.TextAppearance.Bold" parent="@style/UiKit.TextAppearance">
+        <item name="android:fontFamily">?font_primary_bold</item>
+    </style>
+    <style name="UiKit.TextAppearance.Semibold" parent="@style/UiKit.TextAppearance">
+        <item name="android:fontFamily">?font_primary_semibold</item>
+    </style>
+    <style name="UiKit.TextInputLayout.EditText">
+        <item name="android:textAppearance">@style/UiKit.TextAppearance.MaterialEditText.Input</item>
+        <item name="android:textColor">?colorHeaderPrimary</item>
+        <item name="android:textColorHint">?colorHeaderSecondary</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">text</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_color</item>
+    </style>
+    <style name="UiKit.TextInputLayout.EditText.MultiLine" parent="@style/UiKit.TextInputLayout.EditText">
+        <item name="android:maxLines">5</item>
+        <item name="android:maxLength">512</item>
+        <item name="android:inputType">textMultiLine</item>
+    </style>
+    <style name="UiKit.TextInputLayout.EditText.SingleLine" parent="@style/UiKit.TextInputLayout.EditText">
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="UiKit.TextInputLayout.EditText.SingleLine.Password" parent="@style/UiKit.TextInputLayout.EditText.SingleLine">
+        <item name="android:inputType">textPassword</item>
+    </style>
+    <style name="UiKit.TextInputLayout.EditText.SingleLine.Search" parent="@style/UiKit.TextInputLayout.EditText.SingleLine">
+        <item name="android:padding">0.0dip</item>
+        <item name="android:hint">@string/search</item>
+        <item name="android:imeOptions">actionDone</item>
+    </style>
+    <style name="UiKit.TextInputLayout.Primary" parent="@style/UiKit.TextInputLayout">
+        <item name="boxBackgroundColor">?colorBackgroundPrimary</item>
+        <item name="boxCornerRadiusBottomEnd">0.0dip</item>
+        <item name="boxCornerRadiusBottomStart">0.0dip</item>
+        <item name="boxCornerRadiusTopEnd">0.0dip</item>
+        <item name="boxCornerRadiusTopStart">0.0dip</item>
+        <item name="boxStrokeWidth">0.75dip</item>
+        <item name="boxStrokeWidthFocused">0.75dip</item>
+    </style>
+    <style name="UiKit.TextInputLayout.Primary.Password" parent="@style/UiKit.TextInputLayout.Primary">
+        <item name="passwordToggleEnabled">true</item>
+        <item name="passwordToggleTint">?primary_400</item>
+    </style>
     <!-- Base styles for implicit dot-notation inheritance chains -->
     <style name="Animation.AppCompat" parent="android:Animation" />
-    <style name="FlexInput" parent="" />
-    <style name="Markdown.Changelog" parent="" />
-    <style name="Markdown.ChangelogSpecial" parent="" />
+    <style name="FlexInput" parent="@style/AppTheme">
+        <item name="flexInputColorHighlight">?colorControlHighlight</item>
+        <item name="flexInputIconColor">@color/flexInputIconColor</item>
+        <item name="flexInputIconColorActivated">@color/flexInputIconColorActivated</item>
+        <item name="flexInputIconColorDisabled">@color/flexInputIconColorDisabled</item>
+    </style>
+    <style name="Markdown.Changelog" />
+    <style name="Markdown.ChangelogSpecial" />
     <style name="TextAppearance" parent="@android:style/TextAppearance" />
     <style name="UiKit" parent="" />
     <style name="UiKit.Sheet" parent="UiKit" />
     <style name="UiKit.QuickSwitcher" parent="UiKit" />
 
-    <style name="Animation.MaterialComponents.BottomSheetDialog" parent="Animation.AppCompat" />
-    <style name="AppTheme.Dark.Darker" parent="AppTheme.Dark" />
-    <style name="AppTheme.Dark.Evil" parent="AppTheme.Dark" />
-    <style name="AppTheme.GlobalSearchDialog" parent="AppTheme.Dark" />
-    <style name="AppTheme.Light" parent="Theme.MaterialComponents.Light.NoActionBar" />
-    <style name="AppTheme.MaterialYou" parent="AppTheme.Dark" />
-    <style name="AppTheme.PopupMenu" parent="Widget.AppCompat.PopupMenu" />
-    <style name="Code.TextAppearance.Addition" />
-    <style name="Code.TextAppearance.Comment" />
-    <style name="Code.TextAppearance.Deletion" />
-    <style name="Code.TextAppearance.Generics" />
-    <style name="Code.TextAppearance.Identifier" />
-    <style name="Code.TextAppearance.Keyword" />
-    <style name="Code.TextAppearance.Literal" />
-    <style name="Code.TextAppearance.Params" />
-    <style name="Code.TextAppearance.Types" />
-    <style name="FadeInOut" parent="android:Animation" />
-    <style name="FlexInput.DialogWhenLarge" />
-    <style name="Markdown.ChangelogSpecial.Header1" />
-    <style name="Markdown.Changelog.Header1" />
-    <style name="Markdown.Changelog.Header1.Added" />
-    <style name="Markdown.Changelog.Header1.Fixed" />
-    <style name="Markdown.Changelog.Header1.Improved" />
-    <style name="Markdown.Changelog.Header1.Progress" />
-    <style name="Markdown.Changelog.Header4" />
-    <style name="TextAppearance.Error" />
+    <style name="Animation.MaterialComponents.BottomSheetDialog" parent="@style/Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/mtrl_bottom_sheet_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/mtrl_bottom_sheet_slide_out</item>
+    </style>
+    <style name="AppTheme.Dark.Darker" parent="@style/AppTheme.Dark">
+        <item name="appFrameBorderColor">#1f97979f</item>
+        <item name="boost_confirmation_card_bg">@color/neutral_79</item>
+        <item name="colorBackgroundAccent">@color/plum_15</item>
+        <item name="colorBackgroundFloating">@color/neutral_79</item>
+        <item name="colorBackgroundMobilePrimary">@color/neutral_82</item>
+        <item name="colorBackgroundMobileSecondary">@color/neutral_86</item>
+        <item name="colorBackgroundModifierAccent">#296c6f7c</item>
+        <item name="colorBackgroundModifierActive">#2997979f</item>
+        <item name="colorBackgroundModifierHover">#1f97979f</item>
+        <item name="colorBackgroundModifierSelected">#3397979f</item>
+        <item name="colorBackgroundModifierStrong">#3d6c6f7c</item>
+        <item name="colorBackgroundNestedFloating">@color/neutral_73</item>
+        <item name="colorBackgroundPrimary">@color/neutral_82</item>
+        <item name="colorBackgroundSecondary">@color/neutral_86</item>
+        <item name="colorBackgroundSecondaryAlt">@color/plum_15</item>
+        <item name="colorBackgroundTertiary">@color/neutral_92</item>
+        <item name="colorChannelDefault">@color/neutral_35</item>
+        <item name="colorChannelItemSelected">#3397979f</item>
+        <item name="colorChatInputActionBackground">@color/neutral_92</item>
+        <item name="colorChatInputBackground">@color/neutral_92</item>
+        <item name="colorControlNormal">@color/neutral_2</item>
+        <item name="colorGuildBarIconBackground">@color/neutral_79</item>
+        <item name="colorGuildFolderBackground">#1f97979f</item>
+        <item name="colorHeaderPrimary">@color/neutral_2</item>
+        <item name="colorHeaderSecondary">@color/neutral_23</item>
+        <item name="colorInputBackground">#1f000000</item>
+        <item name="colorInteractiveActive">@color/neutral_2</item>
+        <item name="colorInteractiveHover">@color/neutral_2</item>
+        <item name="colorInteractiveMuted">@color/plum_13</item>
+        <item name="colorInteractiveNormal">@color/neutral_23</item>
+        <item name="colorOnSurface">@color/neutral_5</item>
+        <item name="colorPrimary">@color/neutral_82</item>
+        <item name="colorPrimaryDark">@color/neutral_92</item>
+        <item name="colorReactionBackground">#1f97979f</item>
+        <item name="colorSurface">@color/neutral_79</item>
+        <item name="colorTabsBackground">@color/neutral_82</item>
+        <item name="colorTextLink">#ff4d96ee</item>
+        <item name="colorTextMuted">@color/neutral_29</item>
+        <item name="colorTextNormal">@color/neutral_5</item>
+        <item name="notice_popup_bg">@color/neutral_79</item>
+        <item name="theme_chat_input">#ff26272f</item>
+        <item name="theme_name">darker</item>
+        <item name="theme_status_indicator_color">@color/neutral_82</item>
+        <item name="toolbarColor">@color/neutral_82</item>
+    </style>
+    <style name="AppTheme.Dark.Evil" parent="@style/AppTheme.Dark.Darker">
+        <item name="appFrameBorderColor">#3397979f</item>
+        <item name="bg_mentions">@drawable/drawable_overlay_mentions_primary_800</item>
+        <item name="boost_confirmation_card_bg">#ff131416</item>
+        <item name="colorAccent">@color/brand_600</item>
+        <item name="colorBackgroundAccent">@color/plum_17</item>
+        <item name="colorBackgroundFloating">#ff131416</item>
+        <item name="colorBackgroundMobilePrimary">@color/black</item>
+        <item name="colorBackgroundMobileSecondary">@color/black</item>
+        <item name="colorBackgroundModifierAccent">#1f6c6f7c</item>
+        <item name="colorBackgroundModifierActive">#3397979f</item>
+        <item name="colorBackgroundModifierSelected">#3d97979f</item>
+        <item name="colorBackgroundModifierStrong">#2e6c6f7c</item>
+        <item name="colorBackgroundNestedFloating">@color/primary_700</item>
+        <item name="colorBackgroundPrimary">@color/black</item>
+        <item name="colorBackgroundSecondary">@color/black</item>
+        <item name="colorBackgroundSecondaryAlt">@color/plum_17</item>
+        <item name="colorBackgroundTertiary">@color/black</item>
+        <item name="colorButtonNormal">@color/brand_630</item>
+        <item name="colorChannelDefault">@color/neutral_37</item>
+        <item name="colorChannelItemSelected">#3d97979f</item>
+        <item name="colorChatInputActionBackground">#1abcc1fa</item>
+        <item name="colorChatInputBackground">#1abcc1fa</item>
+        <item name="colorControlActivated">@color/brand_360</item>
+        <item name="colorControlNormal">@color/neutral_8</item>
+        <item name="colorGuildBarIconBackground">#ff131416</item>
+        <item name="colorGuildFolderBackground">#1f97979f</item>
+        <item name="colorHeaderPrimary">@color/neutral_8</item>
+        <item name="colorHeaderSecondary">@color/neutral_27</item>
+        <item name="colorInputBackground">#1f000000</item>
+        <item name="colorInteractiveActive">@color/neutral_8</item>
+        <item name="colorInteractiveHover">@color/neutral_8</item>
+        <item name="colorInteractiveNormal">@color/neutral_27</item>
+        <item name="colorOnBackground">#ffdcdcdf</item>
+        <item name="colorOnSurface">#ffdcdcdf</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorReactionBackground">#1f97979f</item>
+        <item name="colorSurface">#ff131416</item>
+        <item name="colorTabsBackground">@color/black</item>
+        <item name="colorTextLink">#ff3c8ceb</item>
+        <item name="colorTextMuted">@color/neutral_33</item>
+        <item name="colorTextNormal">#ffdcdcdf</item>
+        <item name="flexInputIconColorDisabled">@color/primary_500_alpha_30</item>
+        <item name="navPanelBorderColor">?appFrameBorderColor</item>
+        <item name="notice_popup_bg">#ff131416</item>
+        <item name="theme_chat_input">#ff000000</item>
+        <item name="theme_name">midnight</item>
+        <item name="theme_status_indicator_color">@color/black</item>
+        <item name="toolbarColor">@color/black</item>
+    </style>
+    <style name="AppTheme.GlobalSearchDialog" parent="@android:style/ThemeOverlay.Material.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:navigationBarColor">@color/nav_bar_color</item>
+    </style>
+    <style name="AppTheme.Light" parent="@style/AppTheme.AutoGenerated.Light">
+        <item name="android:colorBackground">?colorBackgroundPrimary</item>
+        <item name="android:textColorPrimary">?colorTextNormal</item>
+        <item name="android:textColorSecondary">?colorTextMuted</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:colorBackgroundFloating">?colorBackgroundFloating</item>
+        <item name="actionMenuTextColor">@color/primary_500</item>
+        <item name="actionOverflowButtonStyle">@style/AppTheme.Toolbar.OverflowIcon</item>
+        <item name="appFrameBorderColor">#4797979f</item>
+        <item name="boost_confirmation_card_bg">@color/white</item>
+        <item name="bottomSheetDialogTheme">@style/AppTheme.Light.BottomSheet</item>
+        <item name="colorAccent">@color/brand_500</item>
+        <item name="colorBackgroundAccentButton">@color/uikit_btn_bg_color_selector_background_accent_light</item>
+        <item name="colorButtonNormal">@color/brand_500</item>
+        <item name="colorButtonSecondary">@color/uikit_btn_bg_color_selector_secondary_light</item>
+        <item name="colorChannelDefault">#ff666770</item>
+        <item name="colorCompoundButton">@color/uikit_btn_compound_color_selector_light</item>
+        <item name="colorControlActivated">@color/brand_500</item>
+        <item name="colorControlBrandForeground">@color/brand_new_500</item>
+        <item name="colorControlNormal">#ff28282d</item>
+        <item name="colorError">?colorTextDanger</item>
+        <item name="colorOnBackground">#ff2e2e34</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="colorOnPrimary">?colorTextNormal</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnSurface">#ff2e2e34</item>
+        <item name="colorPrimary">@color/neutral_2</item>
+        <item name="colorPrimaryBg">@drawable/drawable_uikit_primary_white_bg</item>
+        <item name="colorPrimaryCircle">@drawable/drawable_uikit_white_circle</item>
+        <item name="colorPrimaryDark">@color/neutral_4</item>
+        <item name="colorPrimaryDivider">@color/primary_200_alpha_60</item>
+        <item name="colorPrimaryTabs">@color/primary_200_alpha_30</item>
+        <item name="colorPrimaryVariant">?colorPrimaryDark</item>
+        <item name="colorPromoLogoBackground">@color/white</item>
+        <item name="colorSecondary">?colorControlBrandForeground</item>
+        <item name="colorSecondaryVariant">?colorTextBrand</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorTabsBackground">@color/primary_light_130</item>
+        <item name="colorTabsDivider">@color/primary_light_300</item>
+        <item name="colorTabsIconActive">@color/primary_light_900</item>
+        <item name="dialogTheme">@style/AppTheme.Light.Notice</item>
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="notice_popup_bg">@color/design_dark_default_color_on_background</item>
+        <item name="notice_theme_positive_red">@style/AppTheme.Light.Notice.PositiveRed</item>
+        <item name="primary_000">@color/primary_light_800</item>
+        <item name="primary_100">@color/primary_500</item>
+        <item name="primary_100_alpha_30">@color/primary_500_alpha_30</item>
+        <item name="primary_100_alpha_60">@color/primary_500_alpha_60</item>
+        <item name="primary_100_bg">@drawable/drawable_uikit_primary_600_bg_dark</item>
+        <item name="primary_200">@color/primary_light_700</item>
+        <item name="primary_200_bg">@drawable/drawable_uikit_primary_800_bg_dark</item>
+        <item name="primary_200_circle">@drawable/drawable_uikit_primary_700_circle</item>
+        <item name="primary_300">@color/primary_light_600</item>
+        <item name="primary_300_alpha_30">@color/primary_400_alpha_30</item>
+        <item name="primary_300_bg">@drawable/drawable_uikit_primary_400_bg_dark</item>
+        <item name="primary_400">@color/primary_light_400</item>
+        <item name="primary_400_alpha_30">@color/primary_300_alpha_30</item>
+        <item name="primary_400_bg">@drawable/drawable_uikit_primary_300_bg_dark</item>
+        <item name="primary_500">@color/primary_light_500</item>
+        <item name="primary_500_alpha_60">@color/primary_500_alpha_60</item>
+        <item name="primary_500_bg">@drawable/drawable_uikit_primary_500_bg_dark</item>
+        <item name="primary_500_circle">@drawable/drawable_uikit_primary_500_circle</item>
+        <item name="primary_560">@color/primary_light_230</item>
+        <item name="primary_600">@color/white</item>
+        <item name="primary_600_bg">@drawable/drawable_uikit_primary_400_bg_dark</item>
+        <item name="primary_630">@color/primary_light_100</item>
+        <item name="primary_630_bg">@drawable/drawable_uikit_primary_100_bg_dark</item>
+        <item name="primary_630_bg_bottom_corners">@drawable/drawable_uikit_primary_light_100_bg_bottom_corners</item>
+        <item name="primary_630_circle">@drawable/drawable_uikit_primary_100_circle</item>
+        <item name="primary_660">@color/primary_light_160</item>
+        <item name="primary_660_bg_outline">@drawable/drawable_uikit_primary_light_100_bg_outline</item>
+        <item name="primary_700">@color/primary_light_200</item>
+        <item name="primary_700_alpha_60">@color/primary_300_alpha_60</item>
+        <item name="primary_700_bg">@drawable/drawable_uikit_primary_300_bg_dark</item>
+        <item name="primary_700_circle">@drawable/drawable_uikit_primary_light_200_circle</item>
+        <item name="primary_700_circle_alpha_50">@drawable/drawable_uikit_primary_light_200_alpha_50_circle</item>
+        <item name="primary_700_top_corners">@drawable/drawable_bg_primary_light_200_top_corners</item>
+        <item name="primary_800">@color/primary_200</item>
+        <item name="primary_800_bg">@drawable/drawable_uikit_primary_200_bg_dark</item>
+        <item name="primary_800_circle">@drawable/drawable_uikit_primary_light_100_circle</item>
+        <item name="primary_900">@color/primary_100</item>
+        <item name="primary_900_alpha_80">@color/primary_100_alpha_80</item>
+        <item name="primary_900_bg">@drawable/drawable_uikit_primary_100_bg_dark</item>
+        <item name="ternaryCheckboxDisabledColor">@color/primary_100_alpha_60</item>
+        <item name="theme_name">light</item>
+        <item name="toolbarColor">@color/neutral_2</item>
+    </style>
+    <style name="AppTheme.MaterialYou" parent="@style/AppTheme.Dark">
+        <item name="android:colorAccent">@color/material_you_accent</item>
+        <item name="appFrameBorderColor">#1f97979f</item>
+        <item name="boost_confirmation_card_bg">@color/material_you_background_floating</item>
+        <item name="bottomSheetDialogTheme">@style/AppTheme.MaterialYou.BottomSheet</item>
+        <item name="colorAccent">@color/material_you_accent</item>
+        <item name="colorBackgroundAccent">@color/material_you_background_floating</item>
+        <item name="colorBackgroundAccentButton">@color/uikit_btn_bg_color_selector_background_accent_material_you</item>
+        <item name="colorBackgroundFloating">@color/material_you_background_floating</item>
+        <item name="colorBackgroundMobilePrimary">@color/material_you_background_primary</item>
+        <item name="colorBackgroundMobileSecondary">@color/material_you_background_secondary</item>
+        <item name="colorBackgroundModifierAccent">@color/material_you_modifier</item>
+        <item name="colorBackgroundModifierStrong">@color/material_you_modifier</item>
+        <item name="colorBackgroundNestedFloating">@color/material_you_background_floating</item>
+        <item name="colorBackgroundPrimary">@color/material_you_background_primary</item>
+        <item name="colorBackgroundSecondary">@color/material_you_background_secondary</item>
+        <item name="colorBackgroundSecondaryAlt">@color/material_you_background_secondary</item>
+        <item name="colorBackgroundTertiary">@color/material_you_background_tertiary</item>
+        <item name="colorButtonNormal">@color/material_you_accent</item>
+        <item name="colorButtonSecondary">@color/uikit_btn_bg_color_selector_secondary_material_you</item>
+        <item name="colorButtonSecondaryBackground">@color/material_you_modifier</item>
+        <item name="colorButtonSecondaryBackgroundActive">@color/material_you_background_floating</item>
+        <item name="colorButtonSecondaryBackgroundDisabled">@color/material_you_background_floating</item>
+        <item name="colorButtonSecondaryBackgroundHover">@color/material_you_modifier</item>
+        <item name="colorChannelDefault">@color/material_you_text_subtle</item>
+        <item name="colorChannelIcon">@color/material_you_text_subtle</item>
+        <item name="colorChannelsDefault">@color/material_you_text_subtle</item>
+        <item name="colorChatInputActionBackground">@color/material_you_background_tertiary</item>
+        <item name="colorChatInputBackground">@color/material_you_background_tertiary</item>
+        <item name="colorCompoundButton">@color/uikit_btn_compound_color_selector_material_you</item>
+        <item name="colorControlActivated">@color/material_you_accent</item>
+        <item name="colorControlBrandForeground">@color/material_you_accent</item>
+        <item name="colorControlBrandForegroundNew">@color/material_you_accent</item>
+        <item name="colorControlNormal">@color/material_you_text_normal</item>
+        <item name="colorGuildBarIconBackground">@color/material_you_background_secondary</item>
+        <item name="colorGuildFolderBackground">@color/material_you_background_secondary</item>
+        <item name="colorHeaderPrimary">@color/material_you_text_normal</item>
+        <item name="colorHeaderSecondary">@color/material_you_text_muted</item>
+        <item name="colorInputBackground">@color/material_you_background_tertiary</item>
+        <item name="colorInteractiveActive">@color/material_you_text_normal</item>
+        <item name="colorInteractiveHover">@color/material_you_text_normal</item>
+        <item name="colorInteractiveMuted">@color/material_you_text_subtle</item>
+        <item name="colorInteractiveNormal">@color/material_you_text_muted</item>
+        <item name="colorMentionBadgeMuted">@color/material_you_muted_badge</item>
+        <item name="colorOnSurface">@color/material_you_text_normal</item>
+        <item name="colorPrimary">@color/material_you_background_secondary</item>
+        <item name="colorPrimaryDark">@color/material_you_background_tertiary</item>
+        <item name="colorPrimaryDivider">@color/material_you_background_floating</item>
+        <item name="colorReactionBackground">@color/material_you_background_secondary</item>
+        <item name="colorSurface">@color/material_you_background_floating</item>
+        <item name="colorTabsBackground">@color/material_you_background_tertiary</item>
+        <item name="colorTextBrand">@color/material_you_accent</item>
+        <item name="colorTextLink">@color/material_you_accent</item>
+        <item name="colorTextLinkLowSaturation">@color/material_you_accent_secondary</item>
+        <item name="colorTextMuted">@color/material_you_text_muted</item>
+        <item name="colorTextNormal">@color/material_you_text_normal</item>
+        <item name="color_brand">@color/material_you_accent</item>
+        <item name="color_brand_500">@color/material_you_accent</item>
+        <item name="dialogTheme">@style/AppTheme.MaterialYou.Notice</item>
+        <item name="notice_popup_bg">@color/material_you_background_floating</item>
+        <item name="notice_theme_positive_red">@style/AppTheme.MaterialYou.Notice.PositiveRed</item>
+        <item name="primary_100">@color/material_you_text_normal</item>
+        <item name="primary_200">@color/material_you_text_normal</item>
+        <item name="primary_300">@color/material_you_text_normal</item>
+        <item name="primary_400">@color/material_you_text_muted</item>
+        <item name="primary_500">@color/material_you_modifier</item>
+        <item name="primary_600">@color/material_you_background_primary</item>
+        <item name="primary_630">@color/material_you_background_secondary</item>
+        <item name="primary_660">@color/material_you_background_secondary</item>
+        <item name="primary_700">@color/material_you_background_tertiary</item>
+        <item name="primary_800">@color/material_you_background_tertiary</item>
+        <item name="primary_900">@color/material_you_background_tertiary</item>
+        <item name="theme_chat_input">@color/material_you_background_tertiary</item>
+        <item name="theme_forum_post_tag_background">@drawable/bg_forum_post_tag_material_you</item>
+        <item name="theme_item_filter_background">@drawable/bg_item_filter_material_you</item>
+        <item name="theme_name">materialYou</item>
+        <item name="theme_status_indicator_color">@color/material_you_accent_secondary</item>
+        <item name="toolbarColor">@color/material_you_background_primary</item>
+    </style>
+    <style name="AppTheme.PopupMenu" parent="@style/Widget.AppCompat.PopupMenu">
+        <item name="android:textColor">?colorHeaderPrimary</item>
+        <item name="android:itemBackground">?colorBackgroundTertiary</item>
+        <item name="android:fontFamily">?font_primary_normal</item>
+    </style>
+    <style name="Code.TextAppearance.Addition">
+        <item name="android:textColor">@color/status_green_400</item>
+    </style>
+    <style name="Code.TextAppearance.Comment">
+        <item name="android:textColor">?colorInteractiveMuted</item>
+    </style>
+    <style name="Code.TextAppearance.Deletion">
+        <item name="android:textColor">@color/status_red_400</item>
+    </style>
+    <style name="Code.TextAppearance.Generics">
+        <item name="android:textColor">#ff63afef</item>
+    </style>
+    <style name="Code.TextAppearance.Identifier">
+        <item name="android:textColor">#fff3cb51</item>
+    </style>
+    <style name="Code.TextAppearance.Keyword">
+        <item name="android:textColor">#ffe06c75</item>
+    </style>
+    <style name="Code.TextAppearance.Literal">
+        <item name="android:textColor">#ff009688</item>
+    </style>
+    <style name="Code.TextAppearance.Params">
+        <item name="android:textColor">#ffc3aeea</item>
+    </style>
+    <style name="Code.TextAppearance.Types">
+        <item name="android:textColor">#ffaed581</item>
+    </style>
+    <style name="FadeInOut">
+        <item name="android:windowEnterAnimation">@anim/anim_fade_in_fast</item>
+        <item name="android:windowExitAnimation">@anim/anim_fade_out_fast</item>
+    </style>
+    <style name="FlexInput.DialogWhenLarge" parent="@style/Theme.AppCompat.DayNight.DialogWhenLarge">
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Design.BottomSheetDialog</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="bottomSheetStyle">@style/Widget.Design.BottomSheet.Modal</item>
+        <item name="flexInputAddContentLauncherTitle">@string/choose_an_application</item>
+        <item name="flexInputDialogBackground">@android:drawable/screen_background_dark_transparent</item>
+    </style>
+    <style name="Markdown.ChangelogSpecial.Header1" parent="@style/TextAppearance.AppCompat.Large">
+        <item name="android:textSize">@dimen/uikit_textsize_xxlarge</item>
+        <item name="android:textColor">?colorHeaderPrimary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">?font_display_bold</item>
+    </style>
+    <style name="Markdown.Changelog.Header1" parent="@style/TextAppearance.AppCompat.Large">
+        <item name="android:textSize">@dimen/markdown_changelog_header_1_textsize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?primary_100</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="Markdown.Changelog.Header1.Added" parent="@style/Markdown.Changelog.Header1">
+        <item name="android:textColor">@color/status_green_600</item>
+    </style>
+    <style name="Markdown.Changelog.Header1.Fixed" parent="@style/Markdown.Changelog.Header1">
+        <item name="android:textColor">@color/status_red_500</item>
+    </style>
+    <style name="Markdown.Changelog.Header1.Improved" parent="@style/Markdown.Changelog.Header1">
+        <item name="android:textColor">?color_brand_500</item>
+    </style>
+    <style name="Markdown.Changelog.Header1.Progress" parent="@style/Markdown.Changelog.Header1">
+        <item name="android:textColor">@color/status_yellow_500</item>
+    </style>
+    <style name="Markdown.Changelog.Header4" parent="@style/TextAppearance.AppCompat.Large">
+        <item name="android:textSize">@dimen/markdown_changelog_header_4_textsize</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">?colorHeaderPrimary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">?font_primary_normal</item>
+    </style>
+    <style name="TextAppearance.Error" parent="@style/TextAppearance.Design.Error">
+        <item name="android:textColor">@color/status_red_500</item>
+    </style>
     <style name="Theme.Translucent.NoTitleBar.Fullscreen" parent="android:Theme.Translucent.NoTitleBar.Fullscreen" />
-    <style name="UiKit.QuickSwitcher.Animation" />
-    <style name="UiKit.Sheet.KeyboardAvoiding" />
-    <style name="UiKit.Toast" />
+    <style name="UiKit.QuickSwitcher.Animation" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/activity_slide_vertical_open_in</item>
+        <item name="android:windowExitAnimation">@anim/activity_slide_vertical_close_out</item>
+    </style>
+    <style name="UiKit.Sheet.KeyboardAvoiding" parent="@style/UiKit.Sheet">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+    <style name="UiKit.Toast">
+        <item name="android:textSize">@dimen/uikit_textsize_medium</item>
+        <item name="android:textColor">@color/primary_100</item>
+        <item name="android:gravity">start|center</item>
+        <item name="android:background">@drawable/app_toast_frame</item>
+        <item name="android:padding">12.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">?font_primary_normal</item>
+    </style>
 </resources>
