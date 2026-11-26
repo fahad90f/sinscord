@@ -38,3 +38,4 @@ __pycache__/
 !/app/manticord-dev.keystore
 /.vscode
 /.discord_js_cache
+recovery.apk
